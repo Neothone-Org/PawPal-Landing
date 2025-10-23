@@ -2,8 +2,7 @@
 const nextConfig = {
   output: "export",
   images: { unoptimized: true },
-  basePath: "/PawPal-Landing",
-  assetPrefix: "/PawPal-Landing/",
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
