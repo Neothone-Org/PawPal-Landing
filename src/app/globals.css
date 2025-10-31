@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: linear-gradient(135deg, #2f5d50 0%, #dab49d 100%);
+  --foreground: #2f2f2f;
+  --color-primary: #2f5d50;
+  --color-secondary: #696969;
+  --card-surface: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --shadow-soft: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
 }
 
 @theme inline {
@@ -14,13 +19,89 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: linear-gradient(135deg, #1b2d2a 0%, #a6775e 100%);
+    --foreground: #f3f4f6;
+    --card-surface: rgba(15, 23, 42, 0.75);
+    --card-border: rgba(255, 255, 255, 0.15);
   }
 }
 
 body {
   background: var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: var(--card-surface);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.primary-link {
+  color: var(--color-primary);
+}
+
+.primary-link:hover {
+  color: #24463d;
+}
+
+.primary-button {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -10px rgba(47, 93, 80, 0.45);
+}
+
+.secondary-link {
+  color: var(--color-secondary);
+}
+
+.secondary-link:hover {
+  color: #4d4d4d;
+}
+
+.legal-content {
+  display: grid;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.legal-content h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2f5d50;
+}
+
+.legal-content p {
+  color: #2f2f2f;
+}
+
+.legal-content ul,
+.legal-content ol {
+  margin-left: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.legal-content li {
+  color: #696969;
+}
+
+.legal-content a {
+  color: #2f5d50;
+  font-weight: 600;
+}
+
+.legal-content a:hover {
+  color: #24463d;
 }

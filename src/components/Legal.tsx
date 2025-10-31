@@ -11,16 +11,23 @@ export function LegalShell({
   children: React.ReactNode;
 }) {
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10">
-      <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
-        {subtitle && <p className="mt-2 text-sm text-gray-500">{subtitle}</p>}
+    <article className="mx-auto w-full max-w-4xl px-4 py-12 md:px-0">
+      <header className="mb-8 text-center md:text-left">
+        <h1 className="text-3xl font-semibold tracking-tight text-[#2F5D50]">
+          {title}
+        </h1>
+        {subtitle && (
+          <p className="mt-2 text-sm text-[#696969]">{subtitle}</p>
+        )}
       </header>
-      <div className="prose prose-neutral max-w-none">{children}</div>
-      <footer className="mt-10 border-t pt-6 text-xs text-gray-500">
+      <div className="glass-card rounded-3xl bg-white/95 p-8 text-sm leading-relaxed text-[#2F2F2F] shadow-xl backdrop-blur">
+        <div className="legal-content">{children}</div>
+      </div>
+      <footer className="mt-10 flex flex-col gap-2 text-xs text-[#696969] md:flex-row md:items-center md:justify-between">
         <p>
-          Last updated: <time dateTime="2025-10-23">Oct 23, 2025</time>
+          Last updated: <time dateTime="2024-10-12">Oct 12, 2024</time>
         </p>
+        <p>Neothone · PawPal Companion App</p>
       </footer>
     </article>
   );
@@ -28,18 +35,34 @@ export function LegalShell({
 
 export function LegalNav() {
   return (
-    <nav className="sticky top-0 z-10 border-b bg-white/70 backdrop-blur">
-      <div className="mx-auto flex max-w-3xl items-center gap-4 px-4 py-3 text-sm">
-        <Link href="/" className="text-gray-600 hover:text-gray-900">
-          Home
+    <nav className="sticky top-0 z-20 border-b border-white/30 bg-white/70 backdrop-blur">
+      <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 text-sm font-medium text-[#2F2F2F] md:px-0">
+        <Link href="/" className="flex items-center gap-2 text-[#2F5D50]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2F5D50] text-white text-sm font-semibold">
+            N
+          </span>
+          Neothone
         </Link>
-        <span className="text-gray-300">/</span>
-        <Link href="/terms" className="text-gray-600 hover:text-gray-900">
+        <div className="flex items-center gap-4">
+          <Link
+            href="/pawpal"
+            className="hidden text-[#696969] hover:text-[#2F5D50] md:inline"
+          >
+            PawPal
+          </Link>
+          <Link
+            href="/pawpal/terms"
+            className="text-[#696969] hover:text-[#2F5D50]"
+          >
           Terms
         </Link>
-        <Link href="/privacy" className="text-gray-600 hover:text-gray-900">
+          <Link
+            href="/pawpal/privacy"
+            className="text-[#696969] hover:text-[#2F5D50]"
+          >
           Privacy
         </Link>
+        </div>
       </div>
     </nav>
   );

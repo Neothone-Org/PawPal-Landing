@@ -1,62 +1,109 @@
 import type { Metadata } from "next";
-import { LegalShell } from "../../../components/Legal"; 
+import { LegalNav, LegalShell } from "../../../components/Legal";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description: "Read the Terms & Conditions governing the use of YourApp.",
+  title: "PawPal Terms of Service",
+  description: "Review the conditions for using the PawPal companion app.",
 };
 
 export default function TermsPage() {
   return (
-    <LegalShell title="Terms & Conditions" subtitle="Please read these terms carefully before using our services.">
-      <h2 id="agreement">1. Agreement to Terms</h2>
-      <p>
-        By accessing or using <strong>YourApp</strong>, you agree to be bound by these Terms & Conditions. If you disagree
-        with any part, you may not access the service.
-      </p>
+    <>
+      <LegalNav />
+      <LegalShell
+        title="PawPal Terms of Service"
+        subtitle="These terms govern your access to and use of PawPal by Neothone."
+      >
+        <h2 id="acceptance">1. Acceptance of terms</h2>
+        <p>
+          By downloading, accessing, or using PawPal, you agree to these Terms
+          of Service and any policies referenced here. If you are using PawPal
+          on behalf of a household, breeder program, or organization, you
+          confirm you have authority to accept for that entity.
+        </p>
 
-      <h2 id="eligibility">2. Eligibility</h2>
-      <p>
-        You represent that you are at least 18 years old (or the age of majority in your jurisdiction) and have the legal
-        capacity to enter into these terms.
-      </p>
+        <h2 id="accounts">2. Accounts and eligibility</h2>
+        <ul>
+          <li>You must be at least 16 or the age of digital consent in your region.</li>
+          <li>
+            Keep your login credentials secure. You are responsible for activity
+            under your account.
+          </li>
+          <li>
+            Please keep account information accurate so we can provide support
+            and required notices.
+          </li>
+        </ul>
 
-      <h2 id="accounts">3. Accounts</h2>
-      <ul>
-        <li>You are responsible for maintaining the confidentiality of your login credentials.</li>
-        <li>You must promptly notify us of any unauthorized use of your account.</li>
-      </ul>
+        <h2 id="acceptable-use">3. Acceptable use</h2>
+        <p>
+          You agree not to misuse PawPal, including by attempting unauthorized
+          access, distributing malware, scraping personal data, or interfering
+          with normal operation. Breaches may result in suspension.
+        </p>
 
-      <h2 id="use">4. Acceptable Use</h2>
-      <p>
-        You agree not to misuse the service, including attempting to interfere with normal operation, reverse engineer,
-        or access data you are not authorized to access.
-      </p>
+        <h2 id="user-content">4. User content</h2>
+        <p>
+          You retain rights to the information, photos, and notes you add. By
+          submitting content you grant Neothone a limited license to host,
+          display, and process it to operate the service. You confirm you have
+          necessary rights to share the data you provide.
+        </p>
 
-      <h2 id="ip">5. Intellectual Property</h2>
-      <p>
-        The service, features, and original content are the exclusive property of YourApp and its licensors.
-      </p>
+        <h2 id="subscriptions">5. Plans and payments</h2>
+        <p>
+          PawPal offers free and paid tiers. Paid plans renew automatically
+          unless cancelled before the renewal date. Pricing, features, and
+          cancellation instructions are provided in-app and on our website.
+        </p>
 
-      <h2 id="termination">6. Termination</h2>
-      <p>
-        We may suspend or terminate your access immediately for any breach of these terms.
-      </p>
+        <h2 id="intellectual-property">6. Intellectual property</h2>
+        <p>
+          PawPal, including branding, features, and code, is the property of
+          Neothone and its licensors. You may not copy, reverse engineer, or
+          create derivative works without permission.
+        </p>
 
-      <h2 id="liability">7. Limitation of Liability</h2>
-      <p>
-        To the maximum extent permitted by law, YourApp shall not be liable for indirect, incidental, or consequential damages.
-      </p>
+        <h2 id="termination">7. Termination</h2>
+        <p>
+          You may stop using PawPal at any time. We may suspend or terminate
+          access for violations of these terms, suspected fraud, or legal
+          reasons. Upon termination we will disable access to your account and,
+          upon request, delete personal data per our Privacy Policy.
+        </p>
 
-      <h2 id="changes">8. Changes</h2>
-      <p>
-        We may update these terms from time to time. Updates take effect upon posting unless otherwise stated.
-      </p>
+        <h2 id="disclaimers">8. Disclaimers and limitation of liability</h2>
+        <p>
+          PawPal is provided “as is” without warranties of any kind. Neothone is
+          not liable for indirect, incidental, or consequential damages arising
+          from use of the service, to the maximum extent permitted by law.
+        </p>
 
-      <h2 id="contact">9. Contact</h2>
-      <p>
-        Questions? Email us at <a href="mailto:legal@yourapp.com">legal@yourapp.com</a>.
-      </p>
-    </LegalShell>
+        <h2 id="indemnity">9. Indemnity</h2>
+        <p>
+          You agree to indemnify and hold Neothone harmless from claims arising
+          out of your misuse of PawPal or violation of these terms.
+        </p>
+
+        <h2 id="changes">10. Changes to terms</h2>
+        <p>
+          We may update these terms as PawPal evolves. Material changes will be
+          communicated, and continued use after updates constitutes acceptance.
+        </p>
+
+        <h2 id="governing-law">11. Governing law</h2>
+        <p>
+          These terms are governed by the laws of Oregon, USA, without regard to
+          conflict of law rules. Disputes will be handled in state or federal
+          courts located in Portland, Oregon.
+        </p>
+
+        <h2 id="contact">12. Contact</h2>
+        <p>
+          Questions about these terms? Email{" "}
+          <a href="mailto:legal@neothone.com">legal@neothone.com</a>.
+        </p>
+      </LegalShell>
+    </>
   );
 }
