@@ -2,10 +2,11 @@
   "name": "pawpal-landing",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/Neothone-Org/PawPal-Landing",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "deploy": "gh-pages -d out",
+    "deploy": "npm run build && cp out/index.html out/404.html && touch out/.nojekyll && echo 'neothone.com' > out/CNAME && gh-pages -d out -t",
     "start": "next start",
     "lint": "next lint"
   },
