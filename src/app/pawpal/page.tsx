@@ -57,7 +57,6 @@ const faqs = [
   },
 ];
 
-const CONTACT_EMAIL = brand.company.contactEmail;
 const pawpalConfig = brand.product.pawpal;
 
 type StoreButtonProps = {
@@ -126,9 +125,9 @@ export default function PawPalPage() {
           <Link href="/pawpal/delete-account" className="hover:text-white">
             Delete account
           </Link>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">
-            Contact
-          </a>
+          <Link href="/pawpal/support" className="hover:text-white">
+            Support
+          </Link>
           <Link
             href="/"
             className="rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 hover:border-white hover:text-white"
@@ -308,12 +307,9 @@ export default function PawPalPage() {
           >
             Delete account
           </Link>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="text-white/75 hover:text-white"
-          >
+          <Link href="/pawpal/support" className="text-white/75 hover:text-white">
             Support
-          </a>
+          </Link>
         </div>
       </footer>
     </main>
