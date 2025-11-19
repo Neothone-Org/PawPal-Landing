@@ -1,24 +1,24 @@
 export const brand = {
   company: {
     name: "Neothone",
-    tagline: "Two devs crafting playful pet & finance apps.",
-    location: "Oradea, Romania",
+    tagline: "Two devs crafting modern and powerful apps.",
+    location: "Romania",
     contactEmail: "contact@neothone.com",
     logo: "/neothone_logo.png",
     foundingYear: 2025,
     teamSize: 2,
   },
   palette: {
-    primary: "#2F5D50",
-    primaryDark: "#24463d",
-    muted: "#696969",
-    ink: "#2F2F2F",
-    tint: "#F6EFEA",
-    borderSoft: "#EFE8E3",
-    accentWarm: "#D9C5B6",
-    gradientFrom: "#2F5D50",
-    gradientVia: "#3F7264",
-    gradientTo: "#DAB49D",
+    primary: "#1E3A8A",
+    primaryDark: "#172554",
+    muted: "#94A3B8",
+    ink: "#0F172A",
+    tint: "#F8FAFC",
+    borderSoft: "#E2E8F0",
+    accentWarm: "#F59E0B",
+    gradientFrom: "#020617",
+    gradientVia: "#0F172A",
+    gradientTo: "#1E3A8A",
   },
   product: {
     pawpal: {
@@ -44,7 +44,8 @@ export const brand = {
         "An upcoming wallet companion that tracks chains, links unlimited addresses, and gives you a shareable activity digest.",
       status: "In development",
       slug: "/crypto-tracking-wallet",
-      waitlistUrl: "mailto:contact@neothone.com?subject=CryptoTracking%20Wallet%20waitlist",
+      waitlistUrl:
+        "mailto:contact@neothone.com?subject=CryptoTracking%20Wallet%20waitlist",
       tags: ["Wallet linking", "Transaction timeline", "Copy-any-wallet"],
       colors: {
         background: "#0A0A0B",

@@ -6,18 +6,15 @@ import { brand } from "../../lib/brand";
 const features = [
   {
     title: "All-species discovery",
-    body:
-      "Browse dogs, cats, reptiles, birds, and rarities with advanced filters for temperament, lineage, and lifestyle.",
+    body: "Browse dogs, cats, reptiles, birds, and rarities with advanced filters for temperament, lineage, and lifestyle.",
   },
   {
     title: "Community & chat",
-    body:
-      "Post updates, share care threads, open topic rooms, and hop into DMs without leaving the PawPal universe.",
+    body: "Post updates, share care threads, open topic rooms, and hop into DMs without leaving the PawPal universe.",
   },
   {
     title: "Swipe-to-match deck",
-    body:
-      "A Tinder-style interface that helps you match your pet with compatible companions for breeding, playdates, or new homes.",
+    body: "A Tinder-style interface that helps you match your pet with compatible companions for breeding, playdates, or new homes.",
   },
 ];
 
@@ -57,6 +54,52 @@ const faqs = [
   },
 ];
 
+const heroScreens = [
+  {
+    src: "/pawpal_0.png",
+    width: 585,
+    height: 1179,
+    label: "Discovery feed",
+    description:
+      "Browse multi-species posts with clear availability tags, match intents, and badges curated for your clubs.",
+  },
+  {
+    src: "/pawpal_1.png",
+    width: 585,
+    height: 1216,
+    label: "Swipe-to-match",
+    description:
+      "View lineage callouts, safety notes, and breeder preferences before you swipe and start a conversation.",
+  },
+  {
+    src: "/pawpal_5.png",
+    width: 585,
+    height: 1179,
+    label: "Community chats",
+    description:
+      "Drop photos, files, and polls into threaded conversations that keep every care circle organized.",
+  },
+  {
+    src: "/pawpal_2.png",
+    width: 585,
+    height: 1173,
+    label: "Profile builder",
+    description:
+      "Store verified details, medical notes, and temperament tags so prospective matches see the full story.",
+  },
+  {
+    src: "/pawpal_3.png",
+    width: 585,
+    height: 1215,
+    label: "Care hub",
+    description:
+      "Track feeding, meds, vet visits, and milestones—everything stays synced across your trusted circle.",
+  },
+];
+
+const heroScreensTopRow = heroScreens.slice(0, 3);
+const heroScreensBottomRow = heroScreens.slice(3);
+
 const pawpalConfig = brand.product.pawpal;
 
 type StoreButtonProps = {
@@ -87,6 +130,9 @@ function StoreButton({ href, title, subtitle, icon }: StoreButtonProps) {
     </a>
   );
 }
+
+const screenshotCardClass =
+  "glass-card mx-auto flex w-full max-w-[260px] flex-col overflow-hidden rounded-[2rem] border border-white/20 bg-white/5 p-4 text-[var(--color-ink)] shadow-xl backdrop-blur";
 
 export default function PawPalPage() {
   return (
@@ -137,8 +183,8 @@ export default function PawPalPage() {
         </nav>
       </header>
 
-      <section className="mt-16 flex flex-col gap-12 lg:flex-row lg:items-center">
-        <div className="max-w-xl space-y-8">
+      <section className="mt-16 space-y-10">
+        <div className="space-y-8">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em]">
             Discovery · Community · Matching
           </span>
@@ -186,36 +232,50 @@ export default function PawPalPage() {
           </div>
         </div>
 
-        <div className="relative flex w-full justify-center lg:justify-end">
-          <div className="glass-card relative w-full max-w-sm rounded-[2.5rem] px-6 pb-8 pt-10 text-left text-[var(--color-ink)] shadow-2xl">
-            <div className="absolute left-1/2 top-0 flex -translate-y-1/2 -translate-x-1/2 flex-col items-center gap-2 text-center">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[var(--color-ink)]">
+        <div className="space-y-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {heroScreensTopRow.map((screen, index) => (
+              <figure key={screen.src} className={screenshotCardClass}>
+                <figcaption className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/70">
+                  {screen.label}
+                </figcaption>
+                <p className="mt-1 text-xs text-white/80">{screen.description}</p>
                 <Image
-                  src={pawpalConfig.logo}
-                  alt="PawPal icon"
-                  width={20}
-                  height={20}
-                  className="h-5 w-5 object-contain"
+                  src={screen.src}
+                  alt={screen.description}
+                  width={screen.width}
+                  height={screen.height}
+                  className="mt-4 h-auto w-full rounded-[1.5rem] border border-white/10 object-cover"
+                  style={{ maxHeight: 520 }}
+                  sizes="(min-width: 1280px) 260px, (min-width: 1024px) 28vw, (min-width: 640px) 40vw, 80vw"
+                  priority={index === 0}
                 />
-                Sneak peek
-              </span>
-              <span className="h-2 w-24 rounded-full bg-white/60" />
-            </div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-muted)]">
-              Upcoming Screenshots
-            </p>
-            <div className="mt-6 space-y-4">
-              <div className="h-36 rounded-2xl border border-dashed border-[var(--color-accent-warm)] bg-white/70" />
-              <div className="h-36 rounded-2xl border border-dashed border-[var(--color-accent-warm)] bg-white/60" />
-              <p className="text-xs text-[var(--color-muted)]">
-                Placeholder frames for app tours. Drop final assets into
-                <code className="ml-1 rounded bg-white/80 px-1 py-0.5 text-[10px] text-[var(--color-ink)]">
-                  public/pawpal
-                </code>{" "}
-                once available.
-              </p>
-            </div>
+              </figure>
+            ))}
           </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:justify-items-center">
+            {heroScreensBottomRow.map((screen) => (
+              <figure key={screen.src} className={screenshotCardClass}>
+                <figcaption className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/70">
+                  {screen.label}
+                </figcaption>
+                <p className="mt-1 text-xs text-white/80">{screen.description}</p>
+                <Image
+                  src={screen.src}
+                  alt={screen.description}
+                  width={screen.width}
+                  height={screen.height}
+                  className="mt-4 h-auto w-full rounded-[1.5rem] border border-white/10 object-cover"
+                  style={{ maxHeight: 520 }}
+                  sizes="(min-width: 1280px) 260px, (min-width: 1024px) 26vw, (min-width: 640px) 40vw, 80vw"
+                />
+              </figure>
+            ))}
+          </div>
+          <p className="text-xs text-white/70">
+            Screens captured from the latest PawPal test build—what you see is
+            what ships to Google Play and the App Store.
+          </p>
         </div>
       </section>
 
@@ -292,7 +352,8 @@ export default function PawPalPage() {
 
       <footer className="mt-20 flex flex-col gap-3 border-t border-white/25 pt-6 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          © {new Date().getFullYear()} {brand.company.name} Labs Inc. · PawPal Companion App
+          © {new Date().getFullYear()} {brand.company.name} Labs Inc. · PawPal
+          Companion App
         </div>
         <div className="flex flex-wrap items-center gap-6">
           <a href="/pawpal/privacy" className="text-white/75 hover:text-white">
@@ -307,7 +368,10 @@ export default function PawPalPage() {
           >
             Delete account
           </Link>
-          <Link href="/pawpal/support" className="text-white/75 hover:text-white">
+          <Link
+            href="/pawpal/support"
+            className="text-white/75 hover:text-white"
+          >
             Support
           </Link>
         </div>
