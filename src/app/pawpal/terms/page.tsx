@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalNav, LegalShell } from "../../../components/Legal";
+import { brand } from "../../../lib/brand";
 
 export const metadata: Metadata = {
   title: "PawPal Terms of Service",
@@ -101,7 +102,10 @@ export default function TermsPage() {
         <h2 id="contact">12. Contact</h2>
         <p>
           Questions about these terms? Email{" "}
-          <a href="mailto:legal@neothone.com">legal@neothone.com</a>.
+          <a href={`mailto:${brand.company.contactEmail}`}>
+            {brand.company.contactEmail}
+          </a>
+          .
         </p>
       </LegalShell>
     </>

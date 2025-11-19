@@ -1,57 +1,83 @@
+import Image from "next/image";
+import { brand } from "../lib/brand";
+
+const pawpalProduct = brand.product.pawpal;
+const cryptoWalletProduct = brand.product.cryptoTrackingWallet;
+
 const heroHighlights = [
-  "Human + animal centered",
-  "Privacy-first architecture",
-  "Crafted by pet people",
+  `Founded ${brand.company.foundingYear}`,
+  `${brand.company.teamSize}-developer studio`,
+  "Mobile + web craftsmanship",
 ];
 
 const productCards = [
   {
-    name: "PawPal",
-    description:
-      "A companion app that keeps families, breeders, and vets in sync while putting pet wellbeing first.",
-    cta: "Visit PawPal",
+    name: pawpalProduct.name,
+    description: pawpalProduct.description,
+    cta: "Dive into PawPal",
     href: "/pawpal",
-    meta: "Live · Mobile",
+    meta: "Live · Community + Matchmaking",
+    badge: "Discovery · Chat · Breeding circles",
   },
   {
-    name: "NestSense",
-    description:
-      "Smart nursery sensors that capture the subtle signals in early puppy care with vet-friendly dashboards.",
-    cta: "Join waitlist",
-    href: "#nestsense",
-    meta: "In private beta",
+    name: cryptoWalletProduct.name,
+    description: cryptoWalletProduct.description,
+    cta: "Preview the wallet",
+    href: cryptoWalletProduct.slug,
+    meta: `${cryptoWalletProduct.status} · Wallet intelligence`,
+    badge: cryptoWalletProduct.tags.join(" · "),
   },
   {
-    name: "PulseBridge",
+    name: "Studio collabs",
     description:
-      "Lightweight APIs that connect trusted groomers, walkers, and wellness pros into your pet ecosystem.",
+      "Micro tools and experimental dashboards we co-build with friends and early partners to keep shipping momentum high.",
     cta: "Partner with us",
     href: "#partners",
-    meta: "Partner program",
+    meta: "Rolling experiments",
+    badge: "Concept sprints · Prototypes",
   },
 ];
 
 const milestones = [
-  { label: "Communities served", value: "36+", detail: "breeders & rescues" },
-  { label: "Pets supported", value: "4.2k", detail: "profiles created" },
-  { label: "Care network", value: "120+", detail: "certified partners" },
+  {
+    label: "Story began",
+    value: `${brand.company.foundingYear}`,
+    detail: "2025, Oradea, Romania",
+  },
+  {
+    label: "Team",
+    value: `${brand.company.teamSize} devs`,
+    detail: "Design + full-stack build",
+  },
+  {
+    label: "Products",
+    value: "1 live · 1 building",
+    detail: "PawPal & CryptoTracking",
+  },
 ];
+
+const CONTACT_EMAIL = brand.company.contactEmail;
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen text-[#2F2F2F]">
+    <main className="relative min-h-screen text-[var(--color-ink)]">
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-8">
         <div className="flex items-center gap-3 text-white">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/20">
-            <span className="text-2xl font-semibold">N</span>
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 p-1.5">
+            <Image
+              src={brand.company.logo}
+              width={42}
+              height={42}
+              alt={`${brand.company.name} logo`}
+              className="h-9 w-9 object-contain"
+              priority
+            />
           </div>
           <div>
             <p className="text-lg font-semibold tracking-wide uppercase">
-              Neothone
+              {brand.company.name}
             </p>
-            <p className="text-sm text-white/70">
-              Gentle tech for modern pet families
-            </p>
+            <p className="text-sm text-white/70">{brand.company.tagline}</p>
           </div>
         </div>
 
@@ -61,6 +87,9 @@ export default function Home() {
           </a>
           <a href="#products" className="hover:text-white">
             Products
+          </a>
+          <a href={cryptoWalletProduct.slug} className="hover:text-white">
+            CryptoTracking Wallet
           </a>
           <a href="#partners" className="hover:text-white">
             Partners
@@ -81,16 +110,17 @@ export default function Home() {
       <section className="mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-10 lg:flex-row lg:items-center">
         <div className="max-w-xl space-y-8 text-white">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
-            Pet Intelligence Studio
+            Microstudio · Since {brand.company.foundingYear}
           </span>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            We build gentle technology that deepens the bond between people and
-            their companions.
+            Two developers building PawPal today and CryptoTracking Wallet
+            tomorrow.
           </h1>
           <p className="text-base text-white/80">
-            From mindful wearables to community-first apps, Neothone delivers
-            trustworthy experiences that empower families, breeders, and care
-            networks to support pets at every life stage.
+            Neothone is the techy duo chasing greatness from Oradea since 2025.
+            We ship PawPal—a discovery app for every pet species—while crafting
+            a purple-hued crypto wallet companion that keeps your wallets
+            linked, transactions transparent, and copy-able in seconds.
           </p>
 
           <ul className="flex flex-wrap gap-3 text-sm text-white/80">
@@ -110,13 +140,13 @@ export default function Home() {
               href="/pawpal"
               className="primary-button inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-widest"
             >
-              Meet PawPal
+              Explore PawPal
             </a>
             <a
-              href="#contact"
+              href={cryptoWalletProduct.slug}
               className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white hover:border-white"
             >
-              Talk to us
+              Preview wallet UI
             </a>
           </div>
         </div>
@@ -124,11 +154,11 @@ export default function Home() {
         <div className="relative mx-auto flex max-w-lg flex-1 justify-center">
           <div className="glass-card w-full rounded-3xl p-8 text-white shadow-2xl">
             <h2 className="text-lg font-semibold uppercase tracking-[0.3em] text-white/70">
-              Ecosystem Impact
+              Studio Snapshot
             </h2>
             <p className="mt-4 text-2xl font-semibold">
-              Building calm, connected experiences for every caretaker in the
-              pet journey.
+              Story started in {brand.company.foundingYear}. Two devs, one live
+              pet app, one bold crypto wallet, zero fluff.
             </p>
 
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
@@ -150,38 +180,42 @@ export default function Home() {
 
       <section
         id="mission"
-        className="mx-auto max-w-6xl rounded-3xl bg-white px-6 py-16 text-[#2F2F2F] shadow-2xl"
+        className="mx-auto max-w-6xl rounded-3xl bg-white px-6 py-16 text-[var(--color-ink)] shadow-2xl"
       >
         <div className="grid gap-10 lg:grid-cols-[2fr,1.2fr] lg:items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl font-semibold text-[#2F5D50]">
-              We believe calm technology creates confident caretakers.
+            <h2 className="text-3xl font-semibold text-[var(--color-primary)]">
+              Our 2025 story: stretch two devs across pets and crypto without
+              losing the soul.
             </h2>
-            <p className="text-base text-[#696969]">
-              Neothone blends behavior science, accessible design, and secure
-              engineering to translate every bark, meow, or nuzzle into insight.
-              Our multidisciplinary team is on a mission to make proactive pet
-              care feel effortless.
+            <p className="text-base text-[var(--color-muted)]">
+              We keep it scrappy and intentional—researching breeders one day,
+              sketching wallet flows the next. PawPal deepens the relationship
+              between people and every kind of pet, while CryptoTracking Wallet
+              gives traders a clear window into what their addresses are doing.
+              Everything is handcrafted with privacy, transparency, and
+              playfulness.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-[#EFE8E3] bg-white p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#696969]">
-                  Integrated Signals
+              <div className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
+                  PawPal Discovery Graph
                 </p>
-                <p className="mt-2 text-sm text-[#2F2F2F]">
-                  Combine hardware, telemetry, and community insight into one
-                  cohesive experience.
+                <p className="mt-2 text-sm text-[var(--color-ink)]">
+                  Breed, chat, and match every animal imaginable—from parrots to
+                  poodles—inside a community feed moderated by breeders.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-[#EFE8E3] bg-white p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#696969]">
-                  Responsible Data
+              <div className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
+                  CryptoTracking Clarity
                 </p>
-                <p className="mt-2 text-sm text-[#2F2F2F]">
-                  We safeguard families with transparent, privacy-first data
-                  practices and opt-in sharing.
+                <p className="mt-2 text-sm text-[var(--color-ink)]">
+                  Link wallets, stream transactions, and copy public addresses
+                  safely with a purple-forward UI meant for lightning-fast
+                  reference.
                 </p>
               </div>
             </div>
@@ -192,12 +226,13 @@ export default function Home() {
               Founder Note
             </h3>
             <p className="mt-5 text-lg leading-relaxed text-white/90">
-              “Neothone grew from the belief that pet tech should feel warm and
-              trustworthy. We design every touchpoint—apps, devices, support—to
-              reduce friction for humans while protecting the animals we love.”
+              “We’re just two devs obsessed with shipping. PawPal proved that
+              playful, respectful pet tech can exist, and now we’re pouring the
+              same energy into a crypto wallet that feels thoughtful. Techy,
+              hungry, and aiming to become great.”
             </p>
             <p className="mt-8 text-sm uppercase tracking-[0.3em] text-white/60">
-              Erica Balser · Founder & Product Lead
+              Neothone Founding Duo
             </p>
           </div>
         </div>
@@ -207,12 +242,13 @@ export default function Home() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-3xl font-semibold text-white">
-              Companion experiences built by Neothone
+              Products we’re nurturing right now
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-white/75">
-              Each product is designed with a shared language of calm
-              interactions, actionable insights, and a focus on the wellbeing of
-              the animals who inspire us.
+              PawPal focuses on the joy of discovering and matching pets;
+              CryptoTracking Wallet focuses on absolute clarity for on-chain
+              life. Both share Neothone’s love for strong UX and trustworthy
+              data.
             </p>
           </div>
           <a
@@ -237,6 +273,11 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold text-white">
                   {product.name}
                 </h3>
+                {product.badge ? (
+                  <p className="text-[11px] uppercase tracking-[0.4em] text-white/50">
+                    {product.badge}
+                  </p>
+                ) : null}
                 <p className="text-sm text-white/80">{product.description}</p>
               </div>
               <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
@@ -252,45 +293,47 @@ export default function Home() {
 
       <section
         id="partners"
-        className="mx-auto max-w-6xl rounded-3xl bg-white px-6 py-16 text-[#2F2F2F] shadow-2xl"
+        className="mx-auto max-w-6xl rounded-3xl bg-white px-6 py-16 text-[var(--color-ink)] shadow-2xl"
       >
         <div className="grid gap-12 lg:grid-cols-[1.2fr,1fr] lg:items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl font-semibold text-[#2F5D50]">
-              Partner programs tailored for breeders, clinics, and innovators.
+            <h2 className="text-3xl font-semibold text-[var(--color-primary)]">
+              Partners keep us honest—whether you work with pets or protocols.
             </h2>
-            <p className="text-base text-[#696969]">
-              Build with Neothone to integrate telemetry, share curated content,
-              or deliver premium services to your community. Our partner team
-              supports thoughtful pilots with measurable outcomes.
+            <p className="text-base text-[var(--color-muted)]">
+              We co-design with breeders, rescues, and wallet power-users to
+              make sure PawPal hits the right tone and CryptoTracking Wallet
+              covers every on-chain habit. Bring us your brief, and we’ll build
+              alongside you.
             </p>
 
-            <ul className="space-y-4 text-sm text-[#2F2F2F]">
+            <ul className="space-y-4 text-sm text-[var(--color-ink)]">
               <li className="flex items-start gap-3">
-                <span className="mt-1 block h-2 w-2 rounded-full bg-[#2F5D50]" />
-                Co-design new journeys for litters, aging pets, and specialty
-                breeds.
+                <span className="mt-1 block h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+                Host exclusive discovery drops, breed spotlights, or community
+                Q&As directly inside PawPal.
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 block h-2 w-2 rounded-full bg-[#2F5D50]" />
-                Offer branded portals and analytics powered by Neothone APIs.
+                <span className="mt-1 block h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+                Plug your wallet workflows into CryptoTracking mock data to help
+                us perfect the timeline.
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 block h-2 w-2 rounded-full bg-[#2F5D50]" />
-                Join quarterly labs to test hardware integrations and new data
-                signals.
+                <span className="mt-1 block h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+                Join quarterly labs to test new matching rules, safety tools,
+                and wallet notification ideas.
               </li>
             </ul>
           </div>
 
-          <div className="space-y-6 rounded-3xl border border-[#EFE8E3] bg-white p-8">
-            <h3 className="text-lg font-semibold text-[#2F2F2F]">
+          <div className="space-y-6 rounded-3xl border border-[var(--color-border-soft)] bg-white p-8">
+            <h3 className="text-lg font-semibold text-[var(--color-ink)]">
               Recent pilot snapshots
             </h3>
-            <div className="space-y-4 text-sm text-[#696969]">
+            <div className="space-y-4 text-sm text-[var(--color-muted)]">
               <p>
                 🐶{" "}
-                <span className="font-medium text-[#2F2F2F]">
+                <span className="font-medium text-[var(--color-ink)]">
                   Emberbrook Shepherds
                 </span>{" "}
                 reduced new-owner support tickets by 42% after adopting PawPal
@@ -298,18 +341,19 @@ export default function Home() {
               </p>
               <p>
                 🩺{" "}
-                <span className="font-medium text-[#2F2F2F]">
+                <span className="font-medium text-[var(--color-ink)]">
                   Northgate Veterinary
                 </span>{" "}
-                stitched Neothone telemetry into post-surgery recovery plans.
+                layered PawPal community posts into discharge packets for new
+                adopters.
               </p>
               <p>
-                🚶{" "}
-                <span className="font-medium text-[#2F2F2F]">
-                  WalkJoy Collective
+                🪙{" "}
+                <span className="font-medium text-[var(--color-ink)]">
+                  Tenet Nodes
                 </span>{" "}
-                launched curated micro-courses inside PawPal to coach first-time
-                puppy parents.
+                stress-tested our CryptoTracking Wallet mockups to ensure
+                multi-wallet linking is lightning fast.
               </p>
             </div>
           </div>
@@ -321,19 +365,19 @@ export default function Home() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight">
-                Start something compassionate with Neothone
+                Help PawPal and CryptoTracking Wallet become great
               </h2>
               <p className="mt-3 max-w-2xl text-sm text-white/80">
-                We’re a small, intentional studio collaborating with partners
-                who care deeply about animals. Tell us about your goals and
-                we’ll co-design the journey.
+                Send us your wishlist—breeding communities you want to see,
+                wallet data you need to untangle, or features that would make
+                adoption smoother. We answer every note personally.
               </p>
             </div>
             <a
               className="primary-button inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em]"
-              href="mailto:hello@neothone.com"
+              href={`mailto:${CONTACT_EMAIL}`}
             >
-              hello@neothone.com
+              {CONTACT_EMAIL}
             </a>
           </div>
         </div>
@@ -342,6 +386,9 @@ export default function Home() {
       <footer className="mx-auto flex max-w-6xl flex-col gap-3 px-6 pb-12 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Neothone Labs Inc. All rights reserved.</p>
         <div className="flex items-center gap-6">
+          <a href={cryptoWalletProduct.slug} className="hover:text-white">
+            CryptoTracking Wallet
+          </a>
           <a href="/pawpal/privacy" className="hover:text-white">
             Privacy
           </a>

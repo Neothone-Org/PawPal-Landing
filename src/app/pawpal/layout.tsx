@@ -22,7 +22,13 @@ export default function PawPalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-dvh bg-gradient-to-br from-[#2F5D50] via-[#3F7264] to-[#DAB49D] text-[#2F2F2F]">
+    <div
+      className="min-h-dvh text-[var(--color-ink)]"
+      style={{
+        backgroundImage:
+          "linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-via) 40%, var(--gradient-to) 100%)",
+      }}
+    >
       {children}
     </div>
   );

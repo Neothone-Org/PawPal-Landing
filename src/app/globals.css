@@ -4,7 +4,13 @@
   --background: linear-gradient(135deg, #2f5d50 0%, #dab49d 100%);
   --foreground: #2f2f2f;
   --color-primary: #2f5d50;
+  --color-primary-dark: #24463d;
   --color-secondary: #696969;
+  --color-ink: #2f2f2f;
+  --color-muted: #696969;
+  --color-tint: #f6efea;
+  --color-border-soft: #efe8e3;
+  --color-accent-warm: #d9c5b6;
   --card-surface: rgba(255, 255, 255, 0.92);
   --card-border: rgba(255, 255, 255, 0.4);
   --shadow-soft: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
@@ -46,7 +52,7 @@ body {
 }
 
 .primary-link:hover {
-  color: #24463d;
+  color: var(--color-primary-dark);
 }
 
 .primary-button {
@@ -78,11 +84,11 @@ body {
 .legal-content h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2f5d50;
+  color: var(--color-primary);
 }
 
 .legal-content p {
-  color: #2f2f2f;
+  color: var(--color-ink);
 }
 
 .legal-content ul,
@@ -94,14 +100,14 @@ body {
 }
 
 .legal-content li {
-  color: #696969;
+  color: var(--color-muted);
 }
 
 .legal-content a {
-  color: #2f5d50;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
 .legal-content a:hover {
-  color: #24463d;
+  color: var(--color-primary-dark);
 }

@@ -1,53 +1,64 @@
+import Image from "next/image";
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { brand } from "../../lib/brand";
+
 const features = [
   {
-    title: "Connected Care Circles",
-    body: "Share updates with co-owners, breeders, and vets without juggling apps or long message threads.",
+    title: "All-species discovery",
+    body:
+      "Browse dogs, cats, reptiles, birds, and rarities with advanced filters for temperament, lineage, and lifestyle.",
   },
   {
-    title: "Mood & Milestone Insights",
-    body: "Log behavior changes, training wins, and health events to uncover patterns that keep pets thriving.",
+    title: "Community & chat",
+    body:
+      "Post updates, share care threads, open topic rooms, and hop into DMs without leaving the PawPal universe.",
   },
   {
-    title: "Resource Library",
-    body: "Curated checklists and guides tailored to your breed, life stage, and goals—always vetted by specialists.",
+    title: "Swipe-to-match deck",
+    body:
+      "A Tinder-style interface that helps you match your pet with compatible companions for breeding, playdates, or new homes.",
   },
 ];
 
 const journeys = [
   {
-    label: "Litter to forever home",
+    label: "Discovery clubs",
     detail:
-      "Guided handoffs and growth snapshots keep new families confident from week eight onward.",
+      "Host niche groups—think sphynx lovers, corgi breeders, or parakeet rescues—and invite people to browse your latest posts.",
   },
   {
-    label: "Everyday routines",
+    label: "Breed-ready flows",
     detail:
-      "Track feedings, meds, walks, and enrichment so the whole household stays in sync.",
+      "Show lineage, genetic testing, and availability, then match with qualified partners through swipe-style queues.",
   },
   {
-    label: "Health partnerships",
+    label: "Community vibes",
     detail:
-      "Invite your vet or trainer to view selected logs and share recommendations in context.",
+      "Drop polls, sell handmade gear, share memes, or stream lives; PawPal keeps the conversation threaded and searchable.",
   },
 ];
 
 const faqs = [
   {
-    question: "When will screenshots be available?",
+    question: "What kinds of pets can I post?",
     answer:
-      "We will publish high-resolution app tours soon. In the meantime, request early access and we will notify you when the media kit is ready.",
+      "Any companion—you can list purebred litters, rescues, hobby farm animals, reptiles, fish, or fantasy mixes. Tag them with traits so discovery stays smart.",
   },
   {
-    question: "Is PawPal free?",
+    question: "How does the Tinder-style matching work?",
     answer:
-      "Yes—core features are free for families. Advanced insights and breeder tooling are available through optional plans.",
+      "Build a profile for your pet, set intent (breed, play, rehome, community), and swipe through curated decks. Mutual matches unlock chat, file sharing, and vet-vetted resources.",
   },
   {
-    question: "How do I become a beta partner?",
+    question: "Is the community free?",
     answer:
-      "Email hello@neothone.com with your role and goals. We run rolling cohorts for breeders, rescues, clinics, and trainers.",
+      "Yes. Posting, commenting, chatting, and matching stay free. Optional breeder suites—analytics, storefronts, badge programs—are rolling out later.",
   },
 ];
+
+const CONTACT_EMAIL = brand.company.contactEmail;
+const pawpalConfig = brand.product.pawpal;
 
 type StoreButtonProps = {
   href: string;
@@ -60,7 +71,10 @@ function StoreButton({ href, title, subtitle, icon }: StoreButtonProps) {
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group flex items-center gap-4 rounded-2xl border border-white/30 bg-white/10 px-6 py-4 text-left text-white shadow-lg transition hover:border-white hover:bg-white/15"
+      aria-label={`${title} - ${subtitle}`}
     >
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white">
         {icon}
@@ -78,21 +92,28 @@ function StoreButton({ href, title, subtitle, icon }: StoreButtonProps) {
 export default function PawPalPage() {
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-6xl flex-col px-6 pb-20 pt-12 text-white">
-      <header className="flex items-center justify-between gap-6">
+      <header className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/20 text-lg font-semibold">
-            Paw
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 p-2">
+            <Image
+              src={pawpalConfig.logo}
+              alt={`${pawpalConfig.name} logo`}
+              width={48}
+              height={48}
+              className="h-8 w-8 object-contain"
+              priority
+            />
           </div>
           <div>
             <p className="text-lg font-semibold uppercase tracking-[0.3em]">
-              PawPal
+              {pawpalConfig.name}
             </p>
             <p className="text-sm text-white/70">
-              A companion app crafted by Neothone
+              A companion app crafted by {brand.company.name}
             </p>
           </div>
         </div>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-white/75 md:flex">
+        <nav className="flex flex-wrap items-center gap-6 text-sm font-medium text-white/80">
           <a href="#features" className="hover:text-white">
             Features
           </a>
@@ -102,35 +123,39 @@ export default function PawPalPage() {
           <a href="#faq" className="hover:text-white">
             FAQ
           </a>
-          <a href="mailto:hello@neothone.com" className="hover:text-white">
+          <Link href="/pawpal/delete-account" className="hover:text-white">
+            Delete account
+          </Link>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">
             Contact
           </a>
+          <Link
+            href="/"
+            className="rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 hover:border-white hover:text-white"
+          >
+            Back to Neothone
+          </Link>
         </nav>
-        <Link
-          href="/"
-          className="hidden rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 hover:border-white hover:text-white md:inline-flex"
-        >
-          Back to Neothone
-        </Link>
       </header>
 
       <section className="mt-16 flex flex-col gap-12 lg:flex-row lg:items-center">
         <div className="max-w-xl space-y-8">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em]">
-            Companion-first design
+            Discovery · Community · Matching
           </span>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            Keep every caretaker aligned with a calm, intelligent pet journal.
+            Discover, chat, and match pets of every kind with PawPal.
           </h1>
           <p className="text-base text-white/80">
-            PawPal translates daily routines, milestones, and health data into a
-            shared story for the people who love and support your pet. We focus
-            on clarity, consent, and collaboration.
+            PawPal is the do-it-all pet network: browse exotic companions,
+            cultivate breeder circles, post to the community feed, and swipe
+            through Tinder-style decks to find the perfect match or play date.
+            Built by the Neothone duo with the earthy palette you already love.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <StoreButton
-              href="https://play.google.com/store/apps/details?id=com.neothone.pawpal"
+              href={pawpalConfig.googlePlayUrl}
               subtitle="Available soon"
               title="Google Play"
               icon={
@@ -145,7 +170,7 @@ export default function PawPalPage() {
               }
             />
             <StoreButton
-              href="https://apps.apple.com"
+              href={pawpalConfig.appStoreUrl}
               subtitle="Coming soon"
               title="App Store"
               icon={
@@ -163,19 +188,32 @@ export default function PawPalPage() {
         </div>
 
         <div className="relative flex w-full justify-center lg:justify-end">
-          <div className="glass-card relative w-full max-w-sm rounded-[2.5rem] px-6 pb-8 pt-10 text-left text-[#2F2F2F] shadow-2xl">
-            <div className="absolute left-1/2 top-0 flex -translate-y-1/2 -translate-x-1/2 gap-3">
-              <span className="h-3 w-24 rounded-full bg-white/40" />
+          <div className="glass-card relative w-full max-w-sm rounded-[2.5rem] px-6 pb-8 pt-10 text-left text-[var(--color-ink)] shadow-2xl">
+            <div className="absolute left-1/2 top-0 flex -translate-y-1/2 -translate-x-1/2 flex-col items-center gap-2 text-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[var(--color-ink)]">
+                <Image
+                  src={pawpalConfig.logo}
+                  alt="PawPal icon"
+                  width={20}
+                  height={20}
+                  className="h-5 w-5 object-contain"
+                />
+                Sneak peek
+              </span>
+              <span className="h-2 w-24 rounded-full bg-white/60" />
             </div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#696969]">
+            <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-muted)]">
               Upcoming Screenshots
             </p>
             <div className="mt-6 space-y-4">
-              <div className="h-36 rounded-2xl border border-dashed border-[#D9C5B6] bg-white/70" />
-              <div className="h-36 rounded-2xl border border-dashed border-[#D9C5B6] bg-white/60" />
-              <p className="text-xs text-[#696969]">
+              <div className="h-36 rounded-2xl border border-dashed border-[var(--color-accent-warm)] bg-white/70" />
+              <div className="h-36 rounded-2xl border border-dashed border-[var(--color-accent-warm)] bg-white/60" />
+              <p className="text-xs text-[var(--color-muted)]">
                 Placeholder frames for app tours. Drop final assets into
-                `public/pawpal` once available.
+                <code className="ml-1 rounded bg-white/80 px-1 py-0.5 text-[10px] text-[var(--color-ink)]">
+                  public/pawpal
+                </code>{" "}
+                once available.
               </p>
             </div>
           </div>
@@ -184,14 +222,14 @@ export default function PawPalPage() {
 
       <section
         id="features"
-        className="mt-20 grid gap-8 rounded-3xl bg-white px-6 py-14 text-[#2F2F2F] shadow-2xl lg:grid-cols-3"
+        className="mt-20 grid gap-8 rounded-3xl bg-white px-6 py-14 text-[var(--color-ink)] shadow-2xl lg:grid-cols-3"
       >
         {features.map((feature) => (
           <div key={feature.title} className="space-y-4">
-            <span className="inline-block rounded-full bg-[#F6EFEA] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F5D50]">
+            <span className="inline-block rounded-full bg-[var(--color-tint)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-primary)]">
               {feature.title}
             </span>
-            <p className="text-sm text-[#696969]">{feature.body}</p>
+            <p className="text-sm text-[var(--color-muted)]">{feature.body}</p>
           </div>
         ))}
       </section>
@@ -203,12 +241,11 @@ export default function PawPalPage() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr,1fr] lg:items-center">
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold">
-              Built for every chapter of pet companionship.
+              Built for every listing, vibe, and wild pet idea.
             </h2>
             <p className="text-sm text-white/80">
-              Whether you are welcoming a new litter, raising a therapy animal,
-              or supporting a senior companion, PawPal adapts to deliver the
-              right touchpoints at the right time.
+              PawPal adapts to experimental breeders, seasoned rescues, casual
+              hobbyists, and meme-posting community members.
             </p>
           </div>
           <div className="space-y-4">
@@ -220,7 +257,7 @@ export default function PawPalPage() {
                 <p className="text-xs uppercase tracking-[0.3em] text-white/70">
                   {journey.label}
                 </p>
-                <p className="mt-2 text-sm text-white/85">{journey.detail}</p>
+                <p className="mt-2 text-sm text-white/80">{journey.detail}</p>
               </div>
             ))}
           </div>
@@ -229,23 +266,23 @@ export default function PawPalPage() {
 
       <section
         id="faq"
-        className="mt-20 rounded-3xl bg-white px-6 py-14 text-[#2F2F2F] shadow-2xl"
+        className="mt-20 rounded-3xl bg-white px-6 py-14 text-[var(--color-ink)] shadow-2xl"
       >
         <div className="mx-auto max-w-3xl space-y-8">
-          <h2 className="text-3xl font-semibold text-[#2F5D50]">
+          <h2 className="text-3xl font-semibold text-[var(--color-primary)]">
             Frequently asked questions
           </h2>
           <div className="space-y-6">
             {faqs.map((item) => (
               <details
                 key={item.question}
-                className="group rounded-2xl border border-[#EFE8E3] bg-white p-5 transition"
+                className="group rounded-2xl border border-[var(--color-border-soft)] bg-white p-5 transition"
                 open
               >
-                <summary className="cursor-pointer text-sm font-semibold text-[#2F2F2F]">
+                <summary className="cursor-pointer text-sm font-semibold text-[var(--color-ink)]">
                   {item.question}
                 </summary>
-                <p className="mt-3 text-sm text-[#696969] group-open:animate-fade-in">
+                <p className="mt-3 text-sm text-[var(--color-muted)] group-open:animate-fade-in">
                   {item.answer}
                 </p>
               </details>
@@ -256,17 +293,23 @@ export default function PawPalPage() {
 
       <footer className="mt-20 flex flex-col gap-3 border-t border-white/25 pt-6 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          © {new Date().getFullYear()} Neothone Labs Inc. · PawPal Companion App
+          © {new Date().getFullYear()} {brand.company.name} Labs Inc. · PawPal Companion App
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-6">
           <a href="/pawpal/privacy" className="text-white/75 hover:text-white">
             Privacy
           </a>
           <a href="/pawpal/terms" className="text-white/75 hover:text-white">
             Terms
           </a>
+          <Link
+            href="/pawpal/delete-account"
+            className="text-white/75 hover:text-white"
+          >
+            Delete account
+          </Link>
           <a
-            href="mailto:hello@neothone.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="text-white/75 hover:text-white"
           >
             Support
@@ -276,5 +319,3 @@ export default function PawPalPage() {
     </main>
   );
 }
-import Link from "next/link";
-import type { ReactNode } from "react";

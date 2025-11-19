@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalNav, LegalShell } from "../../../components/Legal";
+import { brand } from "../../../lib/brand";
 
 export const metadata: Metadata = {
   title: "PawPal Privacy Policy",
@@ -81,7 +82,10 @@ export default function PrivacyPage() {
           We retain data as long as your PawPal account is active or as needed
           to provide services. You can request deletion at any time via the app
           settings or by emailing{" "}
-          <a href="mailto:privacy@neothone.com">privacy@neothone.com</a>.
+          <a href={`mailto:${brand.company.contactEmail}`}>
+            {brand.company.contactEmail}
+          </a>
+          .
         </p>
 
         <h2 id="security">7. Security</h2>
@@ -115,8 +119,10 @@ export default function PrivacyPage() {
         <h2 id="contact">11. Contact us</h2>
         <p>
           Questions about privacy? Reach us at{" "}
-          <a href="mailto:privacy@neothone.com">privacy@neothone.com</a> or by
-          mail at Neothone Labs Inc., Portland, OR.
+          <a href={`mailto:${brand.company.contactEmail}`}>
+            {brand.company.contactEmail}
+          </a>{" "}
+          or by mail at Neothone Labs Inc., Portland, OR.
         </p>
       </LegalShell>
     </>
