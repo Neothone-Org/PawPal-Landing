@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(135deg, #2f5d50 0%, #dab49d 100%);
-  --foreground: #2f2f2f;
-  --color-primary: #2f5d50;
-  --color-primary-dark: #24463d;
-  --color-secondary: #696969;
-  --color-ink: #2f2f2f;
-  --color-muted: #696969;
-  --color-tint: #f6efea;
-  --color-border-soft: #efe8e3;
-  --color-accent-warm: #d9c5b6;
-  --card-surface: rgba(255, 255, 255, 0.92);
-  --card-border: rgba(255, 255, 255, 0.4);
-  --shadow-soft: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  --background: linear-gradient(135deg, #020617 0%, #1e3a8a 70%, #172554 100%);
+  --foreground: #f8fafc;
+  --color-primary: #1e3a8a;
+  --color-primary-dark: #172554;
+  --color-secondary: #94a3b8;
+  --color-ink: #0f172a;
+  --color-muted: #94a3b8;
+  --color-tint: #e2e8f0;
+  --color-border-soft: #1e293b;
+  --color-accent-warm: #f59e0b;
+  --card-surface: rgba(15, 23, 42, 0.75);
+  --card-border: rgba(148, 163, 184, 0.35);
+  --shadow-soft: 0 30px 60px -25px rgba(2, 6, 23, 0.8);
 }
 
 @theme inline {
@@ -25,10 +25,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(135deg, #1b2d2a 0%, #a6775e 100%);
-    --foreground: #f3f4f6;
-    --card-surface: rgba(15, 23, 42, 0.75);
-    --card-border: rgba(255, 255, 255, 0.15);
+    --background: linear-gradient(135deg, #020617 0%, #0f172a 60%, #1d4ed8 100%);
+    --foreground: #f8fafc;
+    --card-surface: rgba(2, 6, 23, 0.85);
+    --card-border: rgba(59, 130, 246, 0.3);
   }
 }
 

@@ -97,8 +97,19 @@ const heroScreens = [
   },
 ];
 
-const heroScreensTopRow = heroScreens.slice(0, 3);
-const heroScreensBottomRow = heroScreens.slice(3);
+const heroScreensLayout = heroScreens.map((screen, index) => {
+  if (index < 3) {
+    return { ...screen, layoutClass: "" };
+  }
+
+  return {
+    ...screen,
+    layoutClass:
+      index === 3
+        ? "lg:col-start-1 lg:row-start-2 lg:justify-self-end"
+        : "lg:col-start-3 lg:row-start-2 lg:justify-self-start",
+  };
+});
 
 const pawpalConfig = brand.product.pawpal;
 
@@ -132,7 +143,7 @@ function StoreButton({ href, title, subtitle, icon }: StoreButtonProps) {
 }
 
 const screenshotCardClass =
-  "glass-card mx-auto flex w-full max-w-[260px] flex-col overflow-hidden rounded-[2rem] border border-white/20 bg-white/5 p-4 text-[var(--color-ink)] shadow-xl backdrop-blur";
+  "glass-card mx-auto flex w-full max-w-[260px] flex-col overflow-hidden rounded-[2rem] border border-white/20 p-4 text-white shadow-xl backdrop-blur";
 
 export default function PawPalPage() {
   return (
@@ -168,6 +179,9 @@ export default function PawPalPage() {
           <a href="#faq" className="hover:text-white">
             FAQ
           </a>
+          <Link href="/pawpal/child-safety" className="hover:text-white">
+            Child safety
+          </Link>
           <Link href="/pawpal/delete-account" className="hover:text-white">
             Delete account
           </Link>
@@ -233,9 +247,12 @@ export default function PawPalPage() {
         </div>
 
         <div className="space-y-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {heroScreensTopRow.map((screen, index) => (
-              <figure key={screen.src} className={screenshotCardClass}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:justify-items-center">
+            {heroScreensLayout.map((screen, index) => (
+              <figure
+                key={screen.src}
+                className={`${screenshotCardClass} ${screen.layoutClass}`}
+              >
                 <figcaption className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/70">
                   {screen.label}
                 </figcaption>
@@ -249,25 +266,6 @@ export default function PawPalPage() {
                   style={{ maxHeight: 520 }}
                   sizes="(min-width: 1280px) 260px, (min-width: 1024px) 28vw, (min-width: 640px) 40vw, 80vw"
                   priority={index === 0}
-                />
-              </figure>
-            ))}
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:justify-items-center">
-            {heroScreensBottomRow.map((screen) => (
-              <figure key={screen.src} className={screenshotCardClass}>
-                <figcaption className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/70">
-                  {screen.label}
-                </figcaption>
-                <p className="mt-1 text-xs text-white/80">{screen.description}</p>
-                <Image
-                  src={screen.src}
-                  alt={screen.description}
-                  width={screen.width}
-                  height={screen.height}
-                  className="mt-4 h-auto w-full rounded-[1.5rem] border border-white/10 object-cover"
-                  style={{ maxHeight: 520 }}
-                  sizes="(min-width: 1280px) 260px, (min-width: 1024px) 26vw, (min-width: 640px) 40vw, 80vw"
                 />
               </figure>
             ))}
@@ -362,6 +360,12 @@ export default function PawPalPage() {
           <a href="/pawpal/terms" className="text-white/75 hover:text-white">
             Terms
           </a>
+          <Link
+            href="/pawpal/child-safety"
+            className="text-white/75 hover:text-white"
+          >
+            Child safety
+          </Link>
           <Link
             href="/pawpal/delete-account"
             className="text-white/75 hover:text-white"

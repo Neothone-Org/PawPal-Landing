@@ -1,4 +1,7 @@
+'use client';
+
 import Image from "next/image";
+import { useState } from "react";
 import { brand } from "../lib/brand";
 
 const pawpalProduct = brand.product.pawpal;
@@ -58,7 +61,17 @@ const milestones = [
 
 const CONTACT_EMAIL = brand.company.contactEmail;
 
+const navLinks = [
+  { label: "Mission", href: "#mission" },
+  { label: "Products", href: "#products" },
+  { label: "CryptoTracking Wallet", href: cryptoWalletProduct.slug },
+  { label: "Partners", href: "#partners" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <main className="relative min-h-screen text-[var(--color-ink)]">
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-8">
@@ -82,22 +95,37 @@ export default function Home() {
         </div>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-white/80 md:flex">
-          <a href="#mission" className="hover:text-white">
-            Mission
-          </a>
-          <a href="#products" className="hover:text-white">
-            Products
-          </a>
-          <a href={cryptoWalletProduct.slug} className="hover:text-white">
-            CryptoTracking Wallet
-          </a>
-          <a href="#partners" className="hover:text-white">
-            Partners
-          </a>
-          <a href="#contact" className="hover:text-white">
-            Contact
-          </a>
+          {navLinks.map((link) => (
+            <a key={link.label} href={link.href} className="hover:text-white">
+              {link.label}
+            </a>
+          ))}
         </nav>
+
+        <button
+          type="button"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white/80 transition hover:border-white hover:text-white md:hidden"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
+        >
+          <span className="relative flex h-4 w-5 flex-col justify-between">
+            <span
+              className={`h-[2px] w-full rounded bg-current transition-transform ${
+                mobileMenuOpen ? "translate-y-1.5 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-[2px] w-full rounded bg-current transition-opacity ${
+                mobileMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`h-[2px] w-full rounded bg-current transition-transform ${
+                mobileMenuOpen ? "-translate-y-1.5 -rotate-45" : ""
+              }`}
+            />
+          </span>
+        </button>
 
         <a
           href="/pawpal"
@@ -106,6 +134,55 @@ export default function Home() {
           Explore PawPal
         </a>
       </header>
+
+      {mobileMenuOpen ? (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm md:hidden">
+          <div className="absolute inset-x-4 top-4 rounded-3xl border border-white/20 bg-white/10 p-6 text-white shadow-2xl">
+            <div className="flex items-center justify-between">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                Navigate
+              </p>
+              <button
+                type="button"
+                className="rounded-full border border-white/20 px-3 py-1 text-xs uppercase tracking-[0.4em] text-white/80"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+            <ul className="mt-6 space-y-4 text-lg font-semibold">
+              {navLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="inline-flex w-full items-center justify-between rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-white/90"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                    <span aria-hidden>→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 space-y-3">
+              <a
+                href="/pawpal"
+                className="block rounded-2xl border border-white/25 px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-white hover:border-white"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Explore PawPal
+              </a>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="block rounded-2xl bg-white px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-ink)]"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Email us
+              </a>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <section className="mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-10 lg:flex-row lg:items-center">
         <div className="max-w-xl space-y-8 text-white">
