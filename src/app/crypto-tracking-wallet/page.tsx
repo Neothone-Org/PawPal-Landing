@@ -107,18 +107,30 @@ export default function CryptoTrackingWalletPage() {
             </p>
           </div>
         </div>
-        <nav className="flex flex-wrap items-center gap-6 text-sm font-medium text-[#A1A1AA]">
-          <a href="#features" className="hover:text-[#F8FAFC]">
+        <nav className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#A1A1AA]">
+          <a
+            href="#features"
+            className="rounded-full border border-[rgba(255,255,255,0.16)] px-3 py-2 hover:border-[rgba(255,255,255,0.32)] hover:text-[#F8FAFC]"
+          >
             Features
           </a>
-          <a href="#roadmap" className="hover:text-[#F8FAFC]">
+          <a
+            href="#roadmap"
+            className="rounded-full border border-[rgba(255,255,255,0.16)] px-3 py-2 hover:border-[rgba(255,255,255,0.32)] hover:text-[#F8FAFC]"
+          >
             Roadmap
           </a>
-          <a href="#cta" className="hover:text-[#F8FAFC]">
+          <a
+            href="#cta"
+            className="rounded-full border border-[rgba(255,255,255,0.16)] px-3 py-2 hover:border-[rgba(255,255,255,0.32)] hover:text-[#F8FAFC]"
+          >
             Waitlist
           </a>
-          <Link href="/pawpal" className="hover:text-[#F8FAFC]">
-            PawPal
+          <Link
+            href="/petsociety"
+            className="rounded-full border border-[rgba(255,255,255,0.16)] px-3 py-2 hover:border-[rgba(255,255,255,0.32)] hover:text-[#F8FAFC]"
+          >
+            PetSociety
           </Link>
           <Link
             href="/"
@@ -445,8 +457,8 @@ export default function CryptoTrackingWalletPage() {
           <Link href="/" className="hover:text-[#F8FAFC]">
             Home
           </Link>
-          <Link href="/pawpal" className="hover:text-[#F8FAFC]">
-            PawPal
+          <Link href="/petsociety" className="hover:text-[#F8FAFC]">
+            PetSociety
           </Link>
           <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[#F8FAFC]">
             Contact

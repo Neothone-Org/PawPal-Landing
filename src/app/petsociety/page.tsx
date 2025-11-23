@@ -10,7 +10,7 @@ const features = [
   },
   {
     title: "Community & chat",
-    body: "Post updates, share care threads, open topic rooms, and hop into DMs without leaving the PawPal universe.",
+    body: "Post updates, share care threads, open topic rooms, and hop into DMs without leaving the PetSociety universe.",
   },
   {
     title: "Swipe-to-match deck",
@@ -32,7 +32,7 @@ const journeys = [
   {
     label: "Community vibes",
     detail:
-      "Drop polls, sell handmade gear, share memes, or stream lives; PawPal keeps the conversation threaded and searchable.",
+      "Drop polls, sell handmade gear, share memes, or stream lives; PetSociety keeps the conversation threaded and searchable.",
   },
 ];
 
@@ -111,7 +111,7 @@ const heroScreensLayout = heroScreens.map((screen, index) => {
   };
 });
 
-const pawpalConfig = brand.product.pawpal;
+const petSocietyConfig = brand.product.petSociety;
 
 type StoreButtonProps = {
   href: string;
@@ -145,47 +145,65 @@ function StoreButton({ href, title, subtitle, icon }: StoreButtonProps) {
 const screenshotCardClass =
   "glass-card mx-auto flex w-full max-w-[260px] flex-col overflow-hidden rounded-[2rem] border border-white/20 p-4 text-white shadow-xl backdrop-blur";
 
-export default function PawPalPage() {
+export default function PetSocietyPage() {
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-6xl flex-col px-6 pb-20 pt-12 text-white">
       <header className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 p-2">
+          <div className="flex h-24 w-24 items-center justify-center">
             <Image
-              src={pawpalConfig.logo}
-              alt={`${pawpalConfig.name} logo`}
-              width={48}
-              height={48}
-              className="h-8 w-8 object-contain"
+              src={petSocietyConfig.logo}
+              alt={`${petSocietyConfig.name} logo`}
+              width={96}
+              height={96}
+              className="h-24 w-24 object-contain drop-shadow-lg"
               priority
             />
           </div>
           <div>
             <p className="text-lg font-semibold uppercase tracking-[0.3em]">
-              {pawpalConfig.name}
+              {petSocietyConfig.name}
             </p>
             <p className="text-sm text-white/70">
               A companion app crafted by {brand.company.name}
             </p>
           </div>
         </div>
-        <nav className="flex flex-wrap items-center gap-6 text-sm font-medium text-white/80">
-          <a href="#features" className="hover:text-white">
+        <nav className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
+          <a
+            href="#features"
+            className="rounded-full border border-white/25 px-3 py-2 hover:border-white hover:text-white"
+          >
             Features
           </a>
-          <a href="#journeys" className="hover:text-white">
+          <a
+            href="#journeys"
+            className="rounded-full border border-white/25 px-3 py-2 hover:border-white hover:text-white"
+          >
             Journeys
           </a>
-          <a href="#faq" className="hover:text-white">
+          <a
+            href="#faq"
+            className="rounded-full border border-white/25 px-3 py-2 hover:border-white hover:text-white"
+          >
             FAQ
           </a>
-          <Link href="/pawpal/child-safety" className="hover:text-white">
+          <Link
+            href="/petsociety/child-safety"
+            className="rounded-full border border-white/25 px-3 py-2 hover:border-white hover:text-white"
+          >
             Child safety
           </Link>
-          <Link href="/pawpal/delete-account" className="hover:text-white">
+          <Link
+            href="/petsociety/delete-account"
+            className="rounded-full border border-white/25 px-3 py-2 hover:border-white hover:text-white"
+          >
             Delete account
           </Link>
-          <Link href="/pawpal/support" className="hover:text-white">
+          <Link
+            href="/petsociety/support"
+            className="rounded-full border border-white/25 px-3 py-2 hover:border-white hover:text-white"
+          >
             Support
           </Link>
           <Link
@@ -203,10 +221,10 @@ export default function PawPalPage() {
             Discovery · Community · Matching
           </span>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            Discover, chat, and match pets of every kind with PawPal.
+            Discover, chat, and match pets of every kind with PetSociety.
           </h1>
           <p className="text-base text-white/80">
-            PawPal is the do-it-all pet network: browse exotic companions,
+            PetSociety is the do-it-all pet network: browse exotic companions,
             cultivate breeder circles, post to the community feed, and swipe
             through Tinder-style decks to find the perfect match or play date.
             Built by the Neothone duo with the earthy palette you already love.
@@ -214,7 +232,7 @@ export default function PawPalPage() {
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <StoreButton
-              href={pawpalConfig.googlePlayUrl}
+              href={petSocietyConfig.googlePlayUrl}
               subtitle="Available soon"
               title="Google Play"
               icon={
@@ -229,7 +247,7 @@ export default function PawPalPage() {
               }
             />
             <StoreButton
-              href={pawpalConfig.appStoreUrl}
+              href={petSocietyConfig.appStoreUrl}
               subtitle="Coming soon"
               title="App Store"
               icon={
@@ -271,7 +289,7 @@ export default function PawPalPage() {
             ))}
           </div>
           <p className="text-xs text-white/70">
-            Screens captured from the latest PawPal test build—what you see is
+            Screens captured from the latest PetSociety test build—what you see is
             what ships to Google Play and the App Store.
           </p>
         </div>
@@ -301,7 +319,7 @@ export default function PawPalPage() {
               Built for every listing, vibe, and wild pet idea.
             </h2>
             <p className="text-sm text-white/80">
-              PawPal adapts to experimental breeders, seasoned rescues, casual
+              PetSociety adapts to experimental breeders, seasoned rescues, casual
               hobbyists, and meme-posting community members.
             </p>
           </div>
@@ -350,30 +368,30 @@ export default function PawPalPage() {
 
       <footer className="mt-20 flex flex-col gap-3 border-t border-white/25 pt-6 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          © {new Date().getFullYear()} {brand.company.name} Labs Inc. · PawPal
+          © {new Date().getFullYear()} {brand.company.name} Labs Inc. · PetSociety
           Companion App
         </div>
         <div className="flex flex-wrap items-center gap-6">
-          <a href="/pawpal/privacy" className="text-white/75 hover:text-white">
+          <a href="/petsociety/privacy" className="text-white/75 hover:text-white">
             Privacy
           </a>
-          <a href="/pawpal/terms" className="text-white/75 hover:text-white">
+          <a href="/petsociety/terms" className="text-white/75 hover:text-white">
             Terms
           </a>
           <Link
-            href="/pawpal/child-safety"
+            href="/petsociety/child-safety"
             className="text-white/75 hover:text-white"
           >
             Child safety
           </Link>
           <Link
-            href="/pawpal/delete-account"
+            href="/petsociety/delete-account"
             className="text-white/75 hover:text-white"
           >
             Delete account
           </Link>
           <Link
-            href="/pawpal/support"
+            href="/petsociety/support"
             className="text-white/75 hover:text-white"
           >
             Support

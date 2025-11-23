@@ -3,8 +3,8 @@ import { LegalNav, LegalShell } from "../../../components/Legal";
 import { brand } from "../../../lib/brand";
 
 export const metadata: Metadata = {
-  title: "PawPal Terms of Service",
-  description: "Review the conditions for using the PawPal companion app.",
+  title: "PetSociety Terms of Service",
+  description: "Review the conditions for using the PetSociety companion app.",
 };
 
 export default function TermsPage() {
@@ -12,13 +12,13 @@ export default function TermsPage() {
     <>
       <LegalNav />
       <LegalShell
-        title="PawPal Terms of Service"
-        subtitle="These terms govern your access to and use of PawPal by Neothone."
+        title="PetSociety Terms of Service"
+        subtitle="These terms govern your access to and use of PetSociety by Neothone."
       >
         <h2 id="acceptance">1. Acceptance of terms</h2>
         <p>
-          By downloading, accessing, or using PawPal, you agree to these Terms
-          of Service and any policies referenced here. If you are using PawPal
+          By downloading, accessing, or using PetSociety, you agree to these Terms
+          of Service and any policies referenced here. If you are using PetSociety
           on behalf of a household, breeder program, or organization, you
           confirm you have authority to accept for that entity.
         </p>
@@ -38,7 +38,7 @@ export default function TermsPage() {
 
         <h2 id="acceptable-use">3. Acceptable use</h2>
         <p>
-          You agree not to misuse PawPal, including by attempting unauthorized
+          You agree not to misuse PetSociety, including by attempting unauthorized
           access, distributing malware, scraping personal data, or interfering
           with normal operation. Breaches may result in suspension.
         </p>
@@ -53,21 +53,21 @@ export default function TermsPage() {
 
         <h2 id="subscriptions">5. Plans and payments</h2>
         <p>
-          PawPal offers free and paid tiers. Paid plans renew automatically
+          PetSociety offers free and paid tiers. Paid plans renew automatically
           unless cancelled before the renewal date. Pricing, features, and
           cancellation instructions are provided in-app and on our website.
         </p>
 
         <h2 id="intellectual-property">6. Intellectual property</h2>
         <p>
-          PawPal, including branding, features, and code, is the property of
+          PetSociety, including branding, features, and code, is the property of
           Neothone and its licensors. You may not copy, reverse engineer, or
           create derivative works without permission.
         </p>
 
         <h2 id="termination">7. Termination</h2>
         <p>
-          You may stop using PawPal at any time. We may suspend or terminate
+          You may stop using PetSociety at any time. We may suspend or terminate
           access for violations of these terms, suspected fraud, or legal
           reasons. Upon termination we will disable access to your account and,
           upon request, delete personal data per our Privacy Policy.
@@ -75,7 +75,7 @@ export default function TermsPage() {
 
         <h2 id="disclaimers">8. Disclaimers and limitation of liability</h2>
         <p>
-          PawPal is provided “as is” without warranties of any kind. Neothone is
+          PetSociety is provided “as is” without warranties of any kind. Neothone is
           not liable for indirect, incidental, or consequential damages arising
           from use of the service, to the maximum extent permitted by law.
         </p>
@@ -83,12 +83,12 @@ export default function TermsPage() {
         <h2 id="indemnity">9. Indemnity</h2>
         <p>
           You agree to indemnify and hold Neothone harmless from claims arising
-          out of your misuse of PawPal or violation of these terms.
+          out of your misuse of PetSociety or violation of these terms.
         </p>
 
         <h2 id="changes">10. Changes to terms</h2>
         <p>
-          We may update these terms as PawPal evolves. Material changes will be
+          We may update these terms as PetSociety evolves. Material changes will be
           communicated, and continued use after updates constitutes acceptance.
         </p>
 

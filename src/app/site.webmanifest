@@ -1,7 +1,7 @@
 {
   "name": "Neothone",
   "short_name": "Neothone",
-  "description": "Neothone microstudio building PawPal and CryptoTracking Wallet.",
+  "description": "Neothone microstudio building PetSociety and CryptoTracking Wallet.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",

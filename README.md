@@ -1,1 +1,1 @@
-# PawPal-Landing
+# PetSociety-Landing

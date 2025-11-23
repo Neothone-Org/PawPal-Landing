@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { brand } from "../lib/brand";
 import type { CSSProperties } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Neothone | PawPal & CryptoTracking Wallet",
+    default: "Neothone | PetSociety & CryptoTracking Wallet",
     template: "%s | Neothone",
   },
   description:
-    "Neothone is a two-person studio building PawPal, the discovery-first pet app, and CryptoTracking Wallet, a purple-hued crypto sidekick.",
+    "Neothone is a two-person studio building PetSociety, the discovery-first pet app, and CryptoTracking Wallet, a purple-hued crypto sidekick.",
   metadataBase: new URL("https://neothone.com"),
   openGraph: {
-    title: "Neothone | PawPal & CryptoTracking Wallet",
+    title: "Neothone | PetSociety & CryptoTracking Wallet",
     description:
-      "Discover Neothone, the two-developer studio behind PawPal and the upcoming CryptoTracking Wallet.",
+      "Discover Neothone, the two-developer studio behind PetSociety and the upcoming CryptoTracking Wallet.",
     url: "https://neothone.com",
     siteName: "Neothone",
     locale: "en_US",
@@ -33,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neothone | PawPal & CryptoTracking Wallet",
+    title: "Neothone | PetSociety & CryptoTracking Wallet",
     description:
-      "Discover Neothone, the two-developer studio behind PawPal and the upcoming CryptoTracking Wallet.",
+      "Discover Neothone, the two-developer studio behind PetSociety and the upcoming CryptoTracking Wallet.",
   },
 };
 
@@ -63,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sora.variable} ${jetBrainsMono.variable} antialiased`}
         style={themeTokens}
       >
         {children}

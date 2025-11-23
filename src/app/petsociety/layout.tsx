@@ -4,44 +4,44 @@ import { brand } from "../../lib/brand";
 
 export const metadata: Metadata = {
   title: {
-    default: "PawPal by Neothone",
-    template: "%s | PawPal",
+    default: "PetSociety by Neothone",
+    template: "%s | PetSociety",
   },
   description:
-    "PawPal is Neothone's companion app that keeps families, breeders, and care pros connected with thoughtful tools.",
+    "PetSociety is Neothone's companion app that keeps families, breeders, and care pros connected with thoughtful tools.",
   openGraph: {
-    title: "PawPal by Neothone",
+    title: "PetSociety by Neothone",
     description:
-      "Discover PawPal—the companion app that keeps pet families, breeders, and care pros connected.",
+      "Discover PetSociety—the companion app that keeps pet families, breeders, and care pros connected.",
     type: "website",
   },
   robots: { index: true, follow: true },
 };
 
-export default function PawPalLayout({
+export default function PetSocietyLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pawpalTheme = brand.product.pawpal.theme;
-  const pawpalTokens: CSSProperties = {
-    ["--color-primary" as string]: pawpalTheme.primary,
+  const petSocietyTheme = brand.product.petSociety.theme;
+  const petSocietyTokens: CSSProperties = {
+    ["--color-primary" as string]: petSocietyTheme.primary,
     ["--color-primary-dark" as string]: "#24463d",
-    ["--color-muted" as string]: pawpalTheme.neutral,
+    ["--color-muted" as string]: petSocietyTheme.neutral,
     ["--color-ink" as string]: "#2F2F2F",
     ["--color-tint" as string]: "#F6EFEA",
     ["--color-border-soft" as string]: "#EFE8E3",
-    ["--color-accent-warm" as string]: pawpalTheme.accent,
-    ["--gradient-from" as string]: pawpalTheme.primary,
+    ["--color-accent-warm" as string]: petSocietyTheme.accent,
+    ["--gradient-from" as string]: petSocietyTheme.primary,
     ["--gradient-via" as string]: "#3F6F62",
-    ["--gradient-to" as string]: pawpalTheme.accent,
+    ["--gradient-to" as string]: petSocietyTheme.accent,
   };
 
   return (
     <div
       className="min-h-dvh text-[var(--color-ink)]"
       style={{
-        ...pawpalTokens,
+        ...petSocietyTokens,
         backgroundImage:
           "linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-via) 40%, var(--gradient-to) 100%)",
       }}

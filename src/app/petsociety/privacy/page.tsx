@@ -3,9 +3,9 @@ import { LegalNav, LegalShell } from "../../../components/Legal";
 import { brand } from "../../../lib/brand";
 
 export const metadata: Metadata = {
-  title: "PawPal Privacy Policy",
+  title: "PetSociety Privacy Policy",
   description:
-    "Understand how PawPal by Neothone collects, uses, and protects your information.",
+    "Understand how PetSociety by Neothone collects, uses, and protects your information.",
 };
 
 export default function PrivacyPage() {
@@ -13,12 +13,12 @@ export default function PrivacyPage() {
     <>
       <LegalNav />
       <LegalShell
-        title="PawPal Privacy Policy"
+        title="PetSociety Privacy Policy"
         subtitle="We safeguard family, breeder, and partner data with transparent, choice-driven practices."
       >
         <h2 id="scope">1. Who this covers</h2>
         <p>
-          This policy applies to the PawPal mobile app, web experiences, and
+          This policy applies to the PetSociety mobile app, web experiences, and
           related services operated by <strong>Neothone Labs Inc.</strong> It
           explains how we collect, use, and share information from pet families,
           breeders, and professional partners.
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
 
         <h2 id="retention">6. Retention and deletion</h2>
         <p>
-          We retain data as long as your PawPal account is active or as needed
+          We retain data as long as your PetSociety account is active or as needed
           to provide services. You can request deletion at any time via the app
           settings or by emailing{" "}
           <a href={`mailto:${brand.company.contactEmail}`}>
@@ -90,7 +90,7 @@ export default function PrivacyPage() {
 
         <h2 id="security">7. Security</h2>
         <p>
-          PawPal uses encryption in transit, segregated infrastructure, role
+          PetSociety uses encryption in transit, segregated infrastructure, role
           based access controls, and regular audits. No platform can guarantee
           absolute security, but we work to minimize risk.
         </p>
@@ -105,14 +105,14 @@ export default function PrivacyPage() {
 
         <h2 id="children">9. Children</h2>
         <p>
-          PawPal is intended for users 16+ (or the applicable age of digital
+          PetSociety is intended for users 16+ (or the applicable age of digital
           consent). We do not knowingly collect personal data from children
           without verified guardian approval.
         </p>
 
         <h2 id="updates">10. Policy updates</h2>
         <p>
-          We may update this policy as PawPal evolves. We will update the “Last
+          We may update this policy as PetSociety evolves. We will update the “Last
           updated” date and notify you of material changes.
         </p>
 

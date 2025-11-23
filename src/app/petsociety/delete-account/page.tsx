@@ -4,17 +4,17 @@ import type { Metadata } from "next";
 import { brand } from "../../../lib/brand";
 
 const CONTACT_EMAIL = brand.company.contactEmail;
-const pawpalConfig = brand.product.pawpal;
+const petSocietyConfig = brand.product.petSociety;
 
 const inAppSteps = [
-  "Open PawPal and make sure you are using the latest version.",
+  "Open PetSociety and make sure you are using the latest version.",
   "Go to Profile → Settings → Delete Account.",
   "Review what will be removed, then confirm deletion with your password or passkey.",
 ];
 
 const directSteps = [
-  "Compose an email to our care team using the same email tied to your PawPal login.",
-  `Send the request to ${CONTACT_EMAIL} with the subject “Delete my PawPal account.”`,
+  "Compose an email to our care team using the same email tied to your PetSociety login.",
+  `Send the request to ${CONTACT_EMAIL} with the subject “Delete my PetSociety account.”`,
   "We will verify ownership and confirm once the deletion is complete.",
 ];
 
@@ -35,51 +35,51 @@ const timeline = [
   },
   {
     label: "Deletion complete",
-    detail: `Your data is permanently deleted within ${pawpalConfig.deletionWindowDays} days, followed by a confirmation note.`,
+    detail: `Your data is permanently deleted within ${petSocietyConfig.deletionWindowDays} days, followed by a confirmation note.`,
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Delete PawPal Account",
+  title: "Delete PetSociety Account",
   description:
-    "Request deletion of your PawPal account or contact the Neothone team for secure, full data removal.",
+    "Request deletion of your PetSociety account or contact the Neothone team for secure, full data removal.",
 };
 
 export default function DeleteAccountPage() {
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col gap-10 px-6 py-16 text-white">
       <Link
-        href="/pawpal"
+        href="/petsociety"
         className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
       >
-        ← Back to PawPal overview
+        ← Back to PetSociety overview
       </Link>
 
       <header className="space-y-6 text-center">
-        <div className="mx-auto flex w-fit items-center gap-3 rounded-full bg-white/10 px-5 py-2 text-xs uppercase tracking-[0.4em]">
+        <div className="mx-auto flex w-fit items-center gap-3 px-5 py-2 text-xs uppercase tracking-[0.35em]">
           <Image
-            src={pawpalConfig.logo}
-            alt="PawPal icon"
-            width={28}
-            height={28}
-            className="h-6 w-6 object-contain"
+            src={petSocietyConfig.logo}
+            alt="PetSociety icon"
+            width={80}
+            height={80}
+            className="h-20 w-20 object-contain drop-shadow-lg"
           />
           Delete Your Account
         </div>
         <h1 className="text-4xl font-semibold leading-snug">
-          Delete Your PawPal Account
+          Delete Your PetSociety Account
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
-          If you would like to delete your PawPal account and all associated data
+          If you would like to delete your PetSociety account and all associated data
           (including email, pet profiles, shared journals, and lists), you can
           request account deletion in two ways. Once we confirm the request, your
-          data is permanently removed within {pawpalConfig.deletionWindowDays} days.
+          data is permanently removed within {petSocietyConfig.deletionWindowDays} days.
         </p>
       </header>
 
       <section className="grid gap-8 rounded-3xl border border-white/30 bg-white/10 p-8 backdrop-blur lg:grid-cols-2">
         <div className="space-y-5">
-          <h2 className="text-xl font-semibold">Delete from inside the PawPal app</h2>
+          <h2 className="text-xl font-semibold">Delete from inside the PetSociety app</h2>
           <ol className="list-decimal space-y-3 pl-5 text-sm text-white/80">
             {inAppSteps.map((step) => (
               <li key={step}>
@@ -100,7 +100,7 @@ export default function DeleteAccountPage() {
             ))}
           </ol>
           <a
-            href={`mailto:${CONTACT_EMAIL}?subject=Delete%20my%20PawPal%20account`}
+            href={`mailto:${CONTACT_EMAIL}?subject=Delete%20my%20PetSociety%20account`}
             className="primary-button inline-flex w-full items-center justify-center rounded-2xl px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em]"
           >
             Email {CONTACT_EMAIL}
@@ -159,7 +159,7 @@ export default function DeleteAccountPage() {
                 {CONTACT_EMAIL}
               </a>
               . We can pause the deletion if you contact us before the
-              {pawpalConfig.deletionWindowDays}-day window ends.
+              {petSocietyConfig.deletionWindowDays}-day window ends.
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 p-4 text-xs text-white/70">
@@ -168,12 +168,12 @@ export default function DeleteAccountPage() {
             </p>
             <ul className="mt-3 space-y-2">
               <li>
-                <Link href="/pawpal/privacy" className="hover:text-white">
+                <Link href="/petsociety/privacy" className="hover:text-white">
                   Privacy policy
                 </Link>
               </li>
               <li>
-                <Link href="/pawpal/terms" className="hover:text-white">
+                <Link href="/petsociety/terms" className="hover:text-white">
                   Terms of service
                 </Link>
               </li>

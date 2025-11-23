@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { brand } from "../../../lib/brand";
 
-const pawpalConfig = brand.product.pawpal;
+const petSocietyConfig = brand.product.petSociety;
 const CONTACT_EMAIL = brand.company.contactEmail;
 
 const supportTopics = [
@@ -43,7 +43,7 @@ const contactChannels = [
   {
     title: "In-app support",
     detail:
-      "Open Profile → Help & support inside PawPal to browse articles and submit a ticket from your device.",
+      "Open Profile → Help & support inside PetSociety to browse articles and submit a ticket from your device.",
     eta: "Fastest for troubleshooting & device-specific bugs.",
   },
   {
@@ -51,7 +51,7 @@ const contactChannels = [
     detail:
       "Send us context, screenshots, or exports and we will respond from our shared inbox.",
     eta: "Replies within 1 business day (Mon–Fri, UTC+2).",
-    href: `mailto:${CONTACT_EMAIL}?subject=PawPal%20Support`,
+    href: `mailto:${CONTACT_EMAIL}?subject=PetSociety%20Support`,
     action: `Email ${CONTACT_EMAIL}`,
   },
   {
@@ -65,7 +65,7 @@ const contactChannels = [
 const expectations = [
   {
     label: "First response",
-    description: "You will hear from a PawPal team member within 24 hours (often sooner).",
+    description: "You will hear from a PetSociety team member within 24 hours (often sooner).",
   },
   {
     label: "Live troubleshooting",
@@ -81,49 +81,49 @@ const quickLinks = [
   {
     title: "Delete my account",
     description: "Follow the secure workflow or reach us if you can’t access the app.",
-    href: "/pawpal/delete-account",
+    href: "/petsociety/delete-account",
   },
   {
     title: "Review privacy",
-    description: "Understand how PawPal collects, stores, and deletes data.",
-    href: "/pawpal/privacy",
+    description: "Understand how PetSociety collects, stores, and deletes data.",
+    href: "/petsociety/privacy",
   },
   {
     title: "Terms of service",
     description: "Learn the policies that govern community conduct and commerce.",
-    href: "/pawpal/terms",
+    href: "/petsociety/terms",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "PawPal Support",
+  title: "PetSociety Support",
   description:
-    "Get help with PawPal accounts, safety questions, billing, and more—plus direct lines to the Neothone team.",
+    "Get help with PetSociety accounts, safety questions, billing, and more—plus direct lines to the Neothone team.",
 };
 
-export default function PawPalSupportPage() {
+export default function PetSocietySupportPage() {
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col gap-10 px-6 py-16 text-white">
       <Link
-        href="/pawpal"
+        href="/petsociety"
         className="inline-flex items-center gap-2 text-sm text-white/70 transition hover:text-white"
       >
-        ← Back to PawPal overview
+        ← Back to PetSociety overview
       </Link>
 
       <header className="space-y-6 text-center">
-        <div className="mx-auto flex w-fit items-center gap-3 rounded-full bg-white/10 px-5 py-2 text-xs uppercase tracking-[0.4em]">
+        <div className="mx-auto flex w-fit items-center gap-3 px-5 py-2 text-xs uppercase tracking-[0.35em]">
           <Image
-            src={pawpalConfig.logo}
-            alt="PawPal icon"
-            width={28}
-            height={28}
-            className="h-6 w-6 object-contain"
+            src={petSocietyConfig.logo}
+            alt="PetSociety icon"
+            width={80}
+            height={80}
+            className="h-20 w-20 object-contain drop-shadow-lg"
           />
-          PawPal Support
+          PetSociety Support
         </div>
         <h1 className="text-4xl font-semibold leading-snug">
-          Need help with PawPal?
+          Need help with PetSociety?
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
           This page centralizes the most-requested answers plus every way to reach the Neothone team.
@@ -138,7 +138,7 @@ export default function PawPalSupportPage() {
             Browse support options
           </a>
           <a
-            href={`mailto:${CONTACT_EMAIL}?subject=PawPal%20Support`}
+            href={`mailto:${CONTACT_EMAIL}?subject=PetSociety%20Support`}
             className="inline-flex items-center justify-center rounded-2xl border border-white/40 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white hover:text-white"
           >
             Email {CONTACT_EMAIL}
@@ -174,7 +174,7 @@ export default function PawPalSupportPage() {
             Reach us the way that works for you
           </h2>
           <p className="text-sm text-[var(--color-muted)]">
-            Two humans run PawPal, so you are never routed through a bot wall.
+            Two humans run PetSociety, so you are never routed through a bot wall.
             Share as much context as you can, and we will follow up with clear steps or a screenshare invite.
           </p>
           <ul className="space-y-4">

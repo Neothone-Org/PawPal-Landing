@@ -21,14 +21,14 @@ export const brand = {
     gradientTo: "#1E3A8A",
   },
   product: {
-    pawpal: {
-      name: "PawPal",
+    petSociety: {
+      name: "PetSociety",
       description:
         "A discovery-forward pet app for every species with matchmaking, chat, and a vibrant community feed.",
       googlePlayUrl:
         "https://play.google.com/store/apps/details?id=com.neothone.pawpal",
       appStoreUrl: "https://apps.apple.com",
-      logo: "/pawpal_logo.png",
+      logo: "/PetSociety.png",
       deletionWindowDays: 14,
       theme: {
         primary: "#2F5D50",

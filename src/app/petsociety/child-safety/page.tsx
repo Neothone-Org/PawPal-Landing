@@ -68,42 +68,42 @@ const privacyHandling = [
 ];
 
 const expectations = [
-  "Use PawPal only for legitimate pet-related social and matching purposes",
+  "Use PetSociety only for legitimate pet-related social and matching purposes",
   "Never share or request sexual or inappropriate content involving minors",
   "Promptly report any content or behavior that may involve child exploitation",
 ];
 
 const changeReasons = [
   "Updates to applicable laws or regulations",
-  "Changes to PawPal features and moderation tools",
+  "Changes to PetSociety features and moderation tools",
   "Evolving best practices for online safety and child protection",
 ];
 
 export const metadata: Metadata = {
-  title: "PawPal Child Safety",
+  title: "PetSociety Child Safety",
   description:
-    "Learn how PawPal keeps kids and teens protected across discovery feeds, DMs, and community clubs.",
+    "Learn how PetSociety keeps kids and teens protected across discovery feeds, DMs, and community clubs.",
 };
 
-export default function PawPalChildSafetyPage() {
+export default function PetSocietyChildSafetyPage() {
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col gap-12 px-6 py-16 text-white">
       <Link
-        href="/pawpal"
+        href="/petsociety"
         className="inline-flex items-center gap-2 text-sm text-white/70 transition hover:text-white"
       >
-        ← Back to PawPal overview
+        ← Back to PetSociety overview
       </Link>
 
       <header className="space-y-6 text-center">
         <div className="mx-auto w-fit rounded-full bg-white/10 px-6 py-2 text-xs uppercase tracking-[0.4em]">
-          PawPal Child Safety & Protection Policy
+          PetSociety Child Safety & Protection Policy
         </div>
         <h1 className="text-4xl font-semibold leading-snug">
-          PawPal takes a zero-tolerance stance against child sexual abuse and exploitation.
+          PetSociety takes a zero-tolerance stance against child sexual abuse and exploitation.
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
-          PawPal (“we”, “our”, “us”) is a social networking and matching app designed for pet owners and
+          PetSociety (“we”, “our”, “us”) is a social networking and matching app designed for pet owners and
           animal lovers. We are committed to protecting children and preventing all forms of child sexual abuse
           and exploitation (CSAE) on our platform.
         </p>
@@ -117,7 +117,7 @@ export default function PawPalChildSafetyPage() {
       <section className="space-y-4 rounded-3xl border border-white/25 bg-white/10 p-6 text-white/80 backdrop-blur">
         <h2 className="text-2xl font-semibold text-white">1. Scope of this Policy</h2>
         <p>
-          This policy applies to all use of PawPal and all content, regardless of where users are located.
+          This policy applies to all use of PetSociety and all content, regardless of where users are located.
           Covered surfaces include:
         </p>
         <ul className="list-disc space-y-2 pl-6">
@@ -133,7 +133,7 @@ export default function PawPalChildSafetyPage() {
             2. Zero-Tolerance for Child Sexual Abuse and Exploitation (CSAE)
           </h2>
           <p>
-            PawPal has a zero-tolerance policy for the following behaviors and content. Any violation may result
+            PetSociety has a zero-tolerance policy for the following behaviors and content. Any violation may result
             in immediate removal, account bans, and reporting to relevant authorities:
           </p>
           <ul className="list-disc space-y-2 pl-6">
@@ -156,11 +156,11 @@ export default function PawPalChildSafetyPage() {
 
       <section className="space-y-4 rounded-3xl border border-white/25 bg-white/10 p-6 text-white/80 backdrop-blur">
         <h2 className="text-2xl font-semibold text-white">
-          3. Age Restrictions and Use of PawPal
+          3. Age Restrictions and Use of PetSociety
         </h2>
         <p>
-          PawPal is intended for adult users who manage pet profiles and interact with other pet owners. Users must
-          meet the legal age of majority where they live. We do not permit the use of PawPal for any purpose involving
+          PetSociety is intended for adult users who manage pet profiles and interact with other pet owners. Users must
+          meet the legal age of majority where they live. We do not permit the use of PetSociety for any purpose involving
           sexual communication with minors. If we have reason to believe an account is grooming or exploiting minors,
           we will investigate, restrict access, and report to relevant authorities.
         </p>
@@ -170,7 +170,7 @@ export default function PawPalChildSafetyPage() {
         <h2 className="text-2xl font-semibold text-[var(--color-primary)]">
           4. Prohibited Content and Behaviors
         </h2>
-        <p>The following content and behaviors are strictly forbidden on PawPal:</p>
+        <p>The following content and behaviors are strictly forbidden on PetSociety:</p>
         <ul className="list-disc space-y-2 pl-6">
           {prohibitedContent.map((item) => (
             <li key={item}>{item}</li>
@@ -225,7 +225,7 @@ export default function PawPalChildSafetyPage() {
             8. Cooperation with Authorities
           </h2>
           <p>
-            PawPal cooperates with law enforcement and relevant child protection organizations as required. This may include:
+            PetSociety cooperates with law enforcement and relevant child protection organizations as required. This may include:
           </p>
           <ul className="list-disc space-y-2 pl-6">
             {cooperationBullets.map((item) => (
@@ -260,7 +260,7 @@ export default function PawPalChildSafetyPage() {
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <p>By using PawPal, you agree to follow this policy and our Terms of Use.</p>
+        <p>By using PetSociety, you agree to follow this policy and our Terms of Use.</p>
       </section>
 
       <section className="space-y-4 rounded-3xl border border-white/25 bg-white/10 p-6 text-white/80 backdrop-blur">
@@ -272,7 +272,7 @@ export default function PawPalChildSafetyPage() {
           ))}
         </ul>
         <p>
-          When we make significant changes, we update the “Last updated” date above. Continued use of PawPal after changes
+          When we make significant changes, we update the “Last updated” date above. Continued use of PetSociety after changes
           signifies acceptance of the updated policy.
         </p>
       </section>
@@ -287,17 +287,17 @@ export default function PawPalChildSafetyPage() {
           Include as much detail as possible so we can assess and respond quickly and appropriately.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <Link href="/pawpal/privacy" className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-4 text-sm hover:border-[var(--color-primary)]">
+          <Link href="/petsociety/privacy" className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-4 text-sm hover:border-[var(--color-primary)]">
             Privacy policy
           </Link>
-          <Link href="/pawpal/support" className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-4 text-sm hover:border-[var(--color-primary)]">
+          <Link href="/petsociety/support" className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-4 text-sm hover:border-[var(--color-primary)]">
             Support center
           </Link>
-          <Link href="/pawpal/delete-account" className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-4 text-sm hover:border-[var(--color-primary)]">
+          <Link href="/petsociety/delete-account" className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-4 text-sm hover:border-[var(--color-primary)]">
             Delete account workflow
           </Link>
           <a
-            href={`mailto:${SUPPORT_EMAIL}?subject=PawPal%20Child%20Safety`}
+            href={`mailto:${SUPPORT_EMAIL}?subject=PetSociety%20Child%20Safety`}
             className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-4 text-sm hover:border-[var(--color-primary)]"
           >
             Email {SUPPORT_EMAIL}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { brand } from "../lib/brand";
 
-const pawpalProduct = brand.product.pawpal;
+const petSocietyProduct = brand.product.petSociety;
 const cryptoWalletProduct = brand.product.cryptoTrackingWallet;
 
 const heroHighlights = [
@@ -15,10 +15,10 @@ const heroHighlights = [
 
 const productCards = [
   {
-    name: pawpalProduct.name,
-    description: pawpalProduct.description,
-    cta: "Dive into PawPal",
-    href: "/pawpal",
+    name: petSocietyProduct.name,
+    description: petSocietyProduct.description,
+    cta: "Dive into PetSociety",
+    href: "/petsociety",
     meta: "Live · Community + Matchmaking",
     badge: "Discovery · Chat · Breeding circles",
   },
@@ -55,7 +55,7 @@ const milestones = [
   {
     label: "Products",
     value: "1 live · 1 building",
-    detail: "PawPal & CryptoTracking",
+    detail: "PetSociety & CryptoTracking",
   },
 ];
 
@@ -76,13 +76,13 @@ export default function Home() {
     <main className="relative min-h-screen text-[var(--color-ink)]">
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-8">
         <div className="flex items-center gap-3 text-white">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 p-1.5">
+          <div className="flex h-20 w-20 items-center justify-center">
             <Image
               src={brand.company.logo}
-              width={42}
-              height={42}
+              width={96}
+              height={96}
               alt={`${brand.company.name} logo`}
-              className="h-9 w-9 object-contain"
+              className="h-20 w-20 object-contain drop-shadow-lg"
               priority
             />
           </div>
@@ -94,9 +94,13 @@ export default function Home() {
           </div>
         </div>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium text-white/80 md:flex">
+        <nav className="hidden items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 md:flex">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="hover:text-white">
+            <a
+              key={link.label}
+              href={link.href}
+              className="rounded-full border border-white/20 px-4 py-2 hover:border-white hover:text-white"
+            >
               {link.label}
             </a>
           ))}
@@ -128,10 +132,10 @@ export default function Home() {
         </button>
 
         <a
-          href="/pawpal"
+          href="/petsociety"
           className="hidden rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white hover:border-white/60 md:inline-flex"
         >
-          Explore PawPal
+          Explore PetSociety
         </a>
       </header>
 
@@ -166,11 +170,11 @@ export default function Home() {
             </ul>
             <div className="mt-6 space-y-3">
               <a
-                href="/pawpal"
+                href="/petsociety"
                 className="block rounded-2xl border border-white/25 px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-white hover:border-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Explore PawPal
+                Explore PetSociety
               </a>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
@@ -190,12 +194,12 @@ export default function Home() {
             Microstudio · Since {brand.company.foundingYear}
           </span>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            Two developers building PawPal today and CryptoTracking Wallet
+            Two developers building PetSociety today and CryptoTracking Wallet
             tomorrow.
           </h1>
           <p className="text-base text-white/80">
             Neothone is the techy duo chasing greatness from Oradea since 2025.
-            We ship PawPal—a discovery app for every pet species—while crafting
+            We ship PetSociety—a discovery app for every pet species—while crafting
             a purple-hued crypto wallet companion that keeps your wallets
             linked, transactions transparent, and copy-able in seconds.
           </p>
@@ -214,10 +218,10 @@ export default function Home() {
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
-              href="/pawpal"
+              href="/petsociety"
               className="primary-button inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-widest"
             >
-              Explore PawPal
+              Explore PetSociety
             </a>
             <a
               href={cryptoWalletProduct.slug}
@@ -267,7 +271,7 @@ export default function Home() {
             </h2>
             <p className="text-base text-[var(--color-muted)]">
               We keep it scrappy and intentional—researching breeders one day,
-              sketching wallet flows the next. PawPal deepens the relationship
+              sketching wallet flows the next. PetSociety deepens the relationship
               between people and every kind of pet, while CryptoTracking Wallet
               gives traders a clear window into what their addresses are doing.
               Everything is handcrafted with privacy, transparency, and
@@ -277,7 +281,7 @@ export default function Home() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
-                  PawPal Discovery Graph
+                  PetSociety Discovery Graph
                 </p>
                 <p className="mt-2 text-sm text-[var(--color-ink)]">
                   Breed, chat, and match every animal imaginable—from parrots to
@@ -303,7 +307,7 @@ export default function Home() {
               Founder Note
             </h3>
             <p className="mt-5 text-lg leading-relaxed text-white/90">
-              “We’re just two devs obsessed with shipping. PawPal proved that
+              “We’re just two devs obsessed with shipping. PetSociety proved that
               playful, respectful pet tech can exist, and now we’re pouring the
               same energy into a crypto wallet that feels thoughtful. Techy,
               hungry, and aiming to become great.”
@@ -322,7 +326,7 @@ export default function Home() {
               Products we’re nurturing right now
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-white/75">
-              PawPal focuses on the joy of discovering and matching pets;
+              PetSociety focuses on the joy of discovering and matching pets;
               CryptoTracking Wallet focuses on absolute clarity for on-chain
               life. Both share Neothone’s love for strong UX and trustworthy
               data.
@@ -379,7 +383,7 @@ export default function Home() {
             </h2>
             <p className="text-base text-[var(--color-muted)]">
               We co-design with breeders, rescues, and wallet power-users to
-              make sure PawPal hits the right tone and CryptoTracking Wallet
+              make sure PetSociety hits the right tone and CryptoTracking Wallet
               covers every on-chain habit. Bring us your brief, and we’ll build
               alongside you.
             </p>
@@ -388,7 +392,7 @@ export default function Home() {
               <li className="flex items-start gap-3">
                 <span className="mt-1 block h-2 w-2 rounded-full bg-[var(--color-primary)]" />
                 Host exclusive discovery drops, breed spotlights, or community
-                Q&As directly inside PawPal.
+                Q&As directly inside PetSociety.
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 block h-2 w-2 rounded-full bg-[var(--color-primary)]" />
@@ -413,7 +417,7 @@ export default function Home() {
                 <span className="font-medium text-[var(--color-ink)]">
                   Emberbrook Shepherds
                 </span>{" "}
-                reduced new-owner support tickets by 42% after adopting PawPal
+                reduced new-owner support tickets by 42% after adopting PetSociety
                 onboarding.
               </p>
               <p>
@@ -421,7 +425,7 @@ export default function Home() {
                 <span className="font-medium text-[var(--color-ink)]">
                   Northgate Veterinary
                 </span>{" "}
-                layered PawPal community posts into discharge packets for new
+                layered PetSociety community posts into discharge packets for new
                 adopters.
               </p>
               <p>
@@ -442,7 +446,7 @@ export default function Home() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight">
-                Help PawPal and CryptoTracking Wallet become great
+                Help PetSociety and CryptoTracking Wallet become great
               </h2>
               <p className="mt-3 max-w-2xl text-sm text-white/80">
                 Send us your wishlist—breeding communities you want to see,
@@ -466,10 +470,10 @@ export default function Home() {
           <a href={cryptoWalletProduct.slug} className="hover:text-white">
             CryptoTracking Wallet
           </a>
-          <a href="/pawpal/privacy" className="hover:text-white">
+          <a href="/petsociety/privacy" className="hover:text-white">
             Privacy
           </a>
-          <a href="/pawpal/terms" className="hover:text-white">
+          <a href="/petsociety/terms" className="hover:text-white">
             Terms
           </a>
           <a

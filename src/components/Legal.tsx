@@ -29,7 +29,7 @@ export function LegalShell({
         <p>
           Last updated: <time dateTime="2024-10-12">Oct 12, 2024</time>
         </p>
-        <p>Neothone · PawPal Companion App</p>
+        <p>Neothone · PetSociety Companion App</p>
       </footer>
     </article>
   );
@@ -40,38 +40,38 @@ export function LegalNav() {
     <nav className="sticky top-0 z-20 border-b border-white/30 bg-white/70 backdrop-blur">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 text-sm font-medium text-[var(--color-ink)] md:px-0">
         <Link href="/" className="flex items-center gap-2 text-[var(--color-primary)]">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-primary)] p-1.5">
+          <span className="flex h-14 w-14 items-center justify-center">
             <Image
               src={brand.company.logo}
               alt={`${brand.company.name} logo`}
-              width={28}
-              height={28}
-              className="h-6 w-6 object-contain"
+              width={72}
+              height={72}
+              className="h-18 w-18 object-contain"
             />
           </span>
           {brand.company.name}
         </Link>
         <div className="flex items-center gap-4">
           <Link
-            href="/pawpal"
+            href="/petsociety"
             className="hidden text-[var(--color-muted)] hover:text-[var(--color-primary)] md:inline"
           >
-            PawPal
+            PetSociety
           </Link>
           <Link
-            href="/pawpal/terms"
+            href="/petsociety/terms"
             className="text-[var(--color-muted)] hover:text-[var(--color-primary)]"
           >
             Terms
           </Link>
           <Link
-            href="/pawpal/privacy"
+            href="/petsociety/privacy"
             className="text-[var(--color-muted)] hover:text-[var(--color-primary)]"
           >
             Privacy
           </Link>
           <Link
-            href="/pawpal/delete-account"
+            href="/petsociety/delete-account"
             className="text-[var(--color-muted)] hover:text-[var(--color-primary)]"
           >
             Delete

@@ -1,8 +1,8 @@
 {
-  "name": "pawpal-landing",
+  "name": "petsociety-landing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Neothone-Org/PawPal-Landing",
+  "homepage": "https://github.com/Neothone-Org/PetSociety-Landing",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
