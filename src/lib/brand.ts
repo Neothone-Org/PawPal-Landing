@@ -28,7 +28,8 @@ export const brand = {
       googlePlayUrl:
         "https://play.google.com/store/apps/details?id=com.neothone.pawpal",
       appStoreUrl: "https://apps.apple.com",
-      logo: "/PetSociety.png",
+      logo: "/pet_society_logo.jpeg",
+      slug: "/petsociety",
       deletionWindowDays: 14,
       theme: {
         primary: "#2F5D50",

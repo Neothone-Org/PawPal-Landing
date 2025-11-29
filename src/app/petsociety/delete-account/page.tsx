@@ -31,7 +31,8 @@ const timeline = [
   },
   {
     label: "Verification",
-    detail: "We confirm ownership and pause all automations tied to your pet profiles.",
+    detail:
+      "We confirm ownership and pause all automations tied to your pet profiles.",
   },
   {
     label: "Deletion complete",
@@ -60,9 +61,9 @@ export default function DeleteAccountPage() {
           <Image
             src={petSocietyConfig.logo}
             alt="PetSociety icon"
-            width={80}
-            height={80}
-            className="h-20 w-20 object-contain drop-shadow-lg"
+            width={120}
+            height={120}
+            className="h-24 w-24 object-contain drop-shadow-lg rounded-full"
           />
           Delete Your Account
         </div>
@@ -70,26 +71,27 @@ export default function DeleteAccountPage() {
           Delete Your PetSociety Account
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
-          If you would like to delete your PetSociety account and all associated data
-          (including email, pet profiles, shared journals, and lists), you can
-          request account deletion in two ways. Once we confirm the request, your
-          data is permanently removed within {petSocietyConfig.deletionWindowDays} days.
+          If you would like to delete your PetSociety account and all associated
+          data (including email, pet profiles, shared journals, and lists), you
+          can request account deletion in two ways. Once we confirm the request,
+          your data is permanently removed within{" "}
+          {petSocietyConfig.deletionWindowDays} days.
         </p>
       </header>
 
       <section className="grid gap-8 rounded-3xl border border-white/30 bg-white/10 p-8 backdrop-blur lg:grid-cols-2">
         <div className="space-y-5">
-          <h2 className="text-xl font-semibold">Delete from inside the PetSociety app</h2>
+          <h2 className="text-xl font-semibold">
+            Delete from inside the PetSociety app
+          </h2>
           <ol className="list-decimal space-y-3 pl-5 text-sm text-white/80">
             {inAppSteps.map((step) => (
-              <li key={step}>
-                {step}
-              </li>
+              <li key={step}>{step}</li>
             ))}
           </ol>
           <p className="rounded-2xl bg-white/5 p-4 text-xs text-white/70">
-            Tip: deleting inside the app is the fastest path because your identity
-            is already verified on your device.
+            Tip: deleting inside the app is the fastest path because your
+            identity is already verified on your device.
           </p>
         </div>
         <div className="space-y-5">
@@ -114,12 +116,16 @@ export default function DeleteAccountPage() {
             What happens after you submit a request?
           </h3>
           <p className="text-sm text-[var(--color-muted)]">
-            We pause notifications immediately and begin the irreversible deletion
-            workflow. Here’s the full cadence so you know what to expect.
+            We pause notifications immediately and begin the irreversible
+            deletion workflow. Here’s the full cadence so you know what to
+            expect.
           </p>
           <ul className="space-y-4 text-sm">
             {timeline.map((item) => (
-              <li key={item.label} className="rounded-2xl border border-[var(--color-border-soft)] p-4">
+              <li
+                key={item.label}
+                className="rounded-2xl border border-[var(--color-border-soft)] p-4"
+              >
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-primary)]">
                   {item.label}
                 </p>
@@ -141,8 +147,8 @@ export default function DeleteAccountPage() {
             ))}
           </ul>
           <p className="text-xs text-[var(--color-muted)]">
-            Need a portable export first? Email us before confirming deletion and
-            we’ll share a secure download link.
+            Need a portable export first? Email us before confirming deletion
+            and we’ll share a secure download link.
           </p>
         </div>
       </section>
@@ -155,7 +161,10 @@ export default function DeleteAccountPage() {
             </h3>
             <p>
               Reply to the confirmation email or reach us anytime at
-              <a href={`mailto:${CONTACT_EMAIL}`} className="ml-1 font-semibold text-white">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="ml-1 font-semibold text-white"
+              >
                 {CONTACT_EMAIL}
               </a>
               . We can pause the deletion if you contact us before the

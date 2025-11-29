@@ -51,7 +51,9 @@ export default function PrivacyPage() {
           <li>Deliver core functionality and personalize the experience.</li>
           <li>Provide optional insights, alerts, and shared logs.</li>
           <li>Maintain security, prevent abuse, and debug issues.</li>
-          <li>Communicate product updates, invitations, and support responses.</li>
+          <li>
+            Communicate product updates, invitations, and support responses.
+          </li>
         </ol>
 
         <h2 id="legal-bases">4. Legal bases (EEA/UK)</h2>
@@ -62,9 +64,7 @@ export default function PrivacyPage() {
         </p>
 
         <h2 id="sharing">5. How we share data</h2>
-        <p>
-          We never sell personal data. We only share information with:
-        </p>
+        <p>We never sell personal data. We only share information with:</p>
         <ul>
           <li>
             <strong>Service providers</strong> that help us operate (cloud
@@ -79,9 +79,9 @@ export default function PrivacyPage() {
 
         <h2 id="retention">6. Retention and deletion</h2>
         <p>
-          We retain data as long as your PetSociety account is active or as needed
-          to provide services. You can request deletion at any time via the app
-          settings or by emailing{" "}
+          We retain data as long as your PetSociety account is active or as
+          needed to provide services. You can request deletion at any time via
+          the app settings or by emailing{" "}
           <a href={`mailto:${brand.company.contactEmail}`}>
             {brand.company.contactEmail}
           </a>
@@ -112,8 +112,8 @@ export default function PrivacyPage() {
 
         <h2 id="updates">10. Policy updates</h2>
         <p>
-          We may update this policy as PetSociety evolves. We will update the “Last
-          updated” date and notify you of material changes.
+          We may update this policy as PetSociety evolves. We will update the
+          “Last updated” date and notify you of material changes.
         </p>
 
         <h2 id="contact">11. Contact us</h2>
@@ -121,8 +121,7 @@ export default function PrivacyPage() {
           Questions about privacy? Reach us at{" "}
           <a href={`mailto:${brand.company.contactEmail}`}>
             {brand.company.contactEmail}
-          </a>{" "}
-          or by mail at Neothone Labs Inc., Portland, OR.
+          </a>
         </p>
       </LegalShell>
     </>

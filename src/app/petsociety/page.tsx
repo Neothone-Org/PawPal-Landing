@@ -154,9 +154,9 @@ export default function PetSocietyPage() {
             <Image
               src={petSocietyConfig.logo}
               alt={`${petSocietyConfig.name} logo`}
-              width={96}
-              height={96}
-              className="h-24 w-24 object-contain drop-shadow-lg"
+              width={120}
+              height={120}
+              className="h-24 w-24 object-contain drop-shadow-lg rounded-full"
               priority
             />
           </div>
@@ -274,7 +274,9 @@ export default function PetSocietyPage() {
                 <figcaption className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/70">
                   {screen.label}
                 </figcaption>
-                <p className="mt-1 text-xs text-white/80">{screen.description}</p>
+                <p className="mt-1 text-xs text-white/80">
+                  {screen.description}
+                </p>
                 <Image
                   src={screen.src}
                   alt={screen.description}
@@ -289,8 +291,8 @@ export default function PetSocietyPage() {
             ))}
           </div>
           <p className="text-xs text-white/70">
-            Screens captured from the latest PetSociety test build—what you see is
-            what ships to Google Play and the App Store.
+            Screens captured from the latest PetSociety test build—what you see
+            is what ships to Google Play and the App Store.
           </p>
         </div>
       </section>
@@ -319,8 +321,8 @@ export default function PetSocietyPage() {
               Built for every listing, vibe, and wild pet idea.
             </h2>
             <p className="text-sm text-white/80">
-              PetSociety adapts to experimental breeders, seasoned rescues, casual
-              hobbyists, and meme-posting community members.
+              PetSociety adapts to experimental breeders, seasoned rescues,
+              casual hobbyists, and meme-posting community members.
             </p>
           </div>
           <div className="space-y-4">
@@ -368,14 +370,20 @@ export default function PetSocietyPage() {
 
       <footer className="mt-20 flex flex-col gap-3 border-t border-white/25 pt-6 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          © {new Date().getFullYear()} {brand.company.name} Labs Inc. · PetSociety
-          Companion App
+          © {new Date().getFullYear()} {brand.company.name} Labs Inc. ·
+          PetSociety Companion App
         </div>
         <div className="flex flex-wrap items-center gap-6">
-          <a href="/petsociety/privacy" className="text-white/75 hover:text-white">
+          <a
+            href="/petsociety/privacy"
+            className="text-white/75 hover:text-white"
+          >
             Privacy
           </a>
-          <a href="/petsociety/terms" className="text-white/75 hover:text-white">
+          <a
+            href="/petsociety/terms"
+            className="text-white/75 hover:text-white"
+          >
             Terms
           </a>
           <Link

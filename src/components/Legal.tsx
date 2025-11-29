@@ -39,14 +39,17 @@ export function LegalNav() {
   return (
     <nav className="sticky top-0 z-20 border-b border-white/30 bg-white/70 backdrop-blur">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 text-sm font-medium text-[var(--color-ink)] md:px-0">
-        <Link href="/" className="flex items-center gap-2 text-[var(--color-primary)]">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-[var(--color-primary)]"
+        >
           <span className="flex h-14 w-14 items-center justify-center">
             <Image
               src={brand.company.logo}
               alt={`${brand.company.name} logo`}
-              width={72}
-              height={72}
-              className="h-18 w-18 object-contain"
+              width={120}
+              height={120}
+              className="h-18 w-18 object-contain drop-shadow-lg rounded-full"
             />
           </span>
           {brand.company.name}

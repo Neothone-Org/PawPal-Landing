@@ -65,32 +65,38 @@ const contactChannels = [
 const expectations = [
   {
     label: "First response",
-    description: "You will hear from a PetSociety team member within 24 hours (often sooner).",
+    description:
+      "You will hear from a PetSociety team member within 24 hours (often sooner).",
   },
   {
     label: "Live troubleshooting",
-    description: "We may invite you to a quick screenshare or send diagnostic steps tailored to your device.",
+    description:
+      "We may invite you to a quick screenshare or send diagnostic steps tailored to your device.",
   },
   {
     label: "Resolution summary",
-    description: "Every ticket ends with a recap email, links to next steps, and guidance on preventing repeats.",
+    description:
+      "Every ticket ends with a recap email, links to next steps, and guidance on preventing repeats.",
   },
 ];
 
 const quickLinks = [
   {
     title: "Delete my account",
-    description: "Follow the secure workflow or reach us if you can’t access the app.",
+    description:
+      "Follow the secure workflow or reach us if you can’t access the app.",
     href: "/petsociety/delete-account",
   },
   {
     title: "Review privacy",
-    description: "Understand how PetSociety collects, stores, and deletes data.",
+    description:
+      "Understand how PetSociety collects, stores, and deletes data.",
     href: "/petsociety/privacy",
   },
   {
     title: "Terms of service",
-    description: "Learn the policies that govern community conduct and commerce.",
+    description:
+      "Learn the policies that govern community conduct and commerce.",
     href: "/petsociety/terms",
   },
 ];
@@ -116,9 +122,9 @@ export default function PetSocietySupportPage() {
           <Image
             src={petSocietyConfig.logo}
             alt="PetSociety icon"
-            width={80}
-            height={80}
-            className="h-20 w-20 object-contain drop-shadow-lg"
+            width={120}
+            height={120}
+            className="h-24 w-24 object-contain drop-shadow-lg rounded-full"
           />
           PetSociety Support
         </div>
@@ -126,9 +132,9 @@ export default function PetSocietySupportPage() {
           Need help with PetSociety?
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
-          This page centralizes the most-requested answers plus every way to reach the Neothone team.
-          Start with the topic that matches your situation and send us a ticket whenever you need a
-          human touch.
+          This page centralizes the most-requested answers plus every way to
+          reach the Neothone team. Start with the topic that matches your
+          situation and send us a ticket whenever you need a human touch.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <a
@@ -148,7 +154,10 @@ export default function PetSocietySupportPage() {
 
       <section className="grid gap-6 rounded-3xl border border-white/25 bg-white/10 p-6 backdrop-blur lg:grid-cols-3">
         {supportTopics.map((topic) => (
-          <div key={topic.title} className="space-y-4 rounded-2xl bg-white/5 p-5 text-white/80">
+          <div
+            key={topic.title}
+            className="space-y-4 rounded-2xl bg-white/5 p-5 text-white/80"
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
               {topic.title}
             </p>
@@ -174,8 +183,9 @@ export default function PetSocietySupportPage() {
             Reach us the way that works for you
           </h2>
           <p className="text-sm text-[var(--color-muted)]">
-            Two humans run PetSociety, so you are never routed through a bot wall.
-            Share as much context as you can, and we will follow up with clear steps or a screenshare invite.
+            Two humans run PetSociety, so you are never routed through a bot
+            wall. Share as much context as you can, and we will follow up with
+            clear steps or a screenshare invite.
           </p>
           <ul className="space-y-4">
             {contactChannels.map((channel) => (
@@ -186,8 +196,12 @@ export default function PetSocietySupportPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-primary)]">
                   {channel.title}
                 </p>
-                <p className="mt-2 text-sm text-[var(--color-ink)]">{channel.detail}</p>
-                <p className="mt-2 text-xs text-[var(--color-muted)]">{channel.eta}</p>
+                <p className="mt-2 text-sm text-[var(--color-ink)]">
+                  {channel.detail}
+                </p>
+                <p className="mt-2 text-xs text-[var(--color-muted)]">
+                  {channel.eta}
+                </p>
                 {channel.href && channel.action ? (
                   <a
                     href={channel.href}
@@ -206,16 +220,22 @@ export default function PetSocietySupportPage() {
           </h3>
           <ul className="space-y-3 text-sm text-[var(--color-ink)]">
             {expectations.map((item) => (
-              <li key={item.label} className="rounded-2xl bg-white/90 p-4 shadow-sm">
+              <li
+                key={item.label}
+                className="rounded-2xl bg-white/90 p-4 shadow-sm"
+              >
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-primary)]">
                   {item.label}
                 </p>
-                <p className="mt-2 text-[var(--color-ink)]">{item.description}</p>
+                <p className="mt-2 text-[var(--color-ink)]">
+                  {item.description}
+                </p>
               </li>
             ))}
           </ul>
           <p className="text-xs text-[var(--color-muted)]">
-            Weekend requests stay in queue, but we still scan for urgent pet-welfare issues twice a day.
+            Weekend requests stay in queue, but we still scan for urgent
+            pet-welfare issues twice a day.
           </p>
         </div>
       </section>
@@ -223,8 +243,12 @@ export default function PetSocietySupportPage() {
       <section className="rounded-3xl border border-white/25 bg-white/10 p-6 text-white/80 backdrop-blur">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 className="text-2xl font-semibold text-white">Helpful resources</h3>
-            <p>Jump straight to the policies and workflows people ask about most.</p>
+            <h3 className="text-2xl font-semibold text-white">
+              Helpful resources
+            </h3>
+            <p>
+              Jump straight to the policies and workflows people ask about most.
+            </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {quickLinks.map((link) => (
@@ -233,7 +257,9 @@ export default function PetSocietySupportPage() {
                 href={link.href}
                 className="rounded-2xl border border-white/20 bg-white/5 p-4 text-sm text-white hover:border-white hover:text-white"
               >
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">{link.title}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                  {link.title}
+                </p>
                 <p className="mt-2 text-white/80">{link.description}</p>
               </Link>
             ))}

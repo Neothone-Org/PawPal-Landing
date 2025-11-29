@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -18,7 +18,7 @@ const productCards = [
     name: petSocietyProduct.name,
     description: petSocietyProduct.description,
     cta: "Dive into PetSociety",
-    href: "/petsociety",
+    href: petSocietyProduct.slug,
     meta: "Live · Community + Matchmaking",
     badge: "Discovery · Chat · Breeding circles",
   },
@@ -55,7 +55,7 @@ const milestones = [
   {
     label: "Products",
     value: "1 live · 1 building",
-    detail: "PetSociety & CryptoTracking",
+    detail: "PetSociety & Crypto Tracking",
   },
 ];
 
@@ -64,7 +64,6 @@ const CONTACT_EMAIL = brand.company.contactEmail;
 const navLinks = [
   { label: "Mission", href: "#mission" },
   { label: "Products", href: "#products" },
-  { label: "CryptoTracking Wallet", href: cryptoWalletProduct.slug },
   { label: "Partners", href: "#partners" },
   { label: "Contact", href: "#contact" },
 ];
@@ -76,13 +75,13 @@ export default function Home() {
     <main className="relative min-h-screen text-[var(--color-ink)]">
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-8">
         <div className="flex items-center gap-3 text-white">
-          <div className="flex h-20 w-20 items-center justify-center">
+          <div className="flex h-32 w-32 items-center justify-center">
             <Image
               src={brand.company.logo}
-              width={96}
-              height={96}
+              width={128}
+              height={128}
               alt={`${brand.company.name} logo`}
-              className="h-20 w-20 object-contain drop-shadow-lg"
+              className="h-32 w-32 object-contain drop-shadow-lg rounded-full"
               priority
             />
           </div>
@@ -132,7 +131,13 @@ export default function Home() {
         </button>
 
         <a
-          href="/petsociety"
+          href={cryptoWalletProduct.slug}
+          className="hidden rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white hover:border-white/60 md:inline-flex"
+        >
+          Explore Crypto Tracking Wallet
+        </a>
+        <a
+          href={petSocietyProduct.slug}
           className="hidden rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white hover:border-white/60 md:inline-flex"
         >
           Explore PetSociety
@@ -199,9 +204,9 @@ export default function Home() {
           </h1>
           <p className="text-base text-white/80">
             Neothone is the techy duo chasing greatness from Oradea since 2025.
-            We ship PetSociety—a discovery app for every pet species—while crafting
-            a purple-hued crypto wallet companion that keeps your wallets
-            linked, transactions transparent, and copy-able in seconds.
+            We ship PetSociety—a discovery app for every pet species—while
+            crafting a purple-hued crypto wallet companion that keeps your
+            wallets linked, transactions transparent, and copy-able in seconds.
           </p>
 
           <ul className="flex flex-wrap gap-3 text-sm text-white/80">
@@ -242,14 +247,14 @@ export default function Home() {
               pet app, one bold crypto wallet, zero fluff.
             </p>
 
-            <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {milestones.map((item) => (
                 <div key={item.label} className="rounded-2xl bg-white/5 p-4">
                   <p className="text-sm uppercase tracking-[0.2em] text-white/60">
                     {item.label}
                   </p>
                   <p className="mt-2 text-3xl font-semibold">{item.value}</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/50">
+                  <p className="text-xs uppercase tracking-[0.2em] text-white/50 p-3">
                     {item.detail}
                   </p>
                 </div>
@@ -271,11 +276,11 @@ export default function Home() {
             </h2>
             <p className="text-base text-[var(--color-muted)]">
               We keep it scrappy and intentional—researching breeders one day,
-              sketching wallet flows the next. PetSociety deepens the relationship
-              between people and every kind of pet, while CryptoTracking Wallet
-              gives traders a clear window into what their addresses are doing.
-              Everything is handcrafted with privacy, transparency, and
-              playfulness.
+              sketching wallet flows the next. PetSociety deepens the
+              relationship between people and every kind of pet, while
+              CryptoTracking Wallet gives traders a clear window into what their
+              addresses are doing. Everything is handcrafted with privacy,
+              transparency, and playfulness.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
@@ -307,9 +312,9 @@ export default function Home() {
               Founder Note
             </h3>
             <p className="mt-5 text-lg leading-relaxed text-white/90">
-              “We’re just two devs obsessed with shipping. PetSociety proved that
-              playful, respectful pet tech can exist, and now we’re pouring the
-              same energy into a crypto wallet that feels thoughtful. Techy,
+              “We’re just two devs obsessed with shipping. PetSociety proved
+              that playful, respectful pet tech can exist, and now we’re pouring
+              the same energy into a crypto wallet that feels thoughtful. Techy,
               hungry, and aiming to become great.”
             </p>
             <p className="mt-8 text-sm uppercase tracking-[0.3em] text-white/60">
@@ -417,16 +422,16 @@ export default function Home() {
                 <span className="font-medium text-[var(--color-ink)]">
                   Emberbrook Shepherds
                 </span>{" "}
-                reduced new-owner support tickets by 42% after adopting PetSociety
-                onboarding.
+                reduced new-owner support tickets by 42% after adopting
+                PetSociety onboarding.
               </p>
               <p>
                 🩺{" "}
                 <span className="font-medium text-[var(--color-ink)]">
                   Northgate Veterinary
                 </span>{" "}
-                layered PetSociety community posts into discharge packets for new
-                adopters.
+                layered PetSociety community posts into discharge packets for
+                new adopters.
               </p>
               <p>
                 🪙{" "}
@@ -465,22 +470,13 @@ export default function Home() {
       </section>
 
       <footer className="mx-auto flex max-w-6xl flex-col gap-3 px-6 pb-12 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Neothone Labs Inc. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Neothone All rights reserved.</p>
         <div className="flex items-center gap-6">
-          <a href={cryptoWalletProduct.slug} className="hover:text-white">
-            CryptoTracking Wallet
-          </a>
           <a href="/petsociety/privacy" className="hover:text-white">
             Privacy
           </a>
           <a href="/petsociety/terms" className="hover:text-white">
             Terms
-          </a>
-          <a
-            href="https://www.linkedin.com/company/neothone"
-            className="hover:text-white"
-          >
-            LinkedIn
           </a>
         </div>
       </footer>
