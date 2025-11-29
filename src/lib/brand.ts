@@ -1,6 +1,6 @@
 export const brand = {
   company: {
-    name: "Neothone",
+    name: "Neothone Technologies",
     tagline: "Two devs crafting modern and powerful apps.",
     location: "Romania",
     contactEmail: "contact@neothone.com",

@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <h2 id="scope">1. Who this covers</h2>
         <p>
           This policy applies to the PetSociety mobile app, web experiences, and
-          related services operated by <strong>Neothone Labs Inc.</strong> It
+          related services operated by <strong>Neothone Technologies</strong> It
           explains how we collect, use, and share information from pet families,
           breeders, and professional partners.
         </p>

@@ -370,8 +370,7 @@ export default function PetSocietyPage() {
 
       <footer className="mt-20 flex flex-col gap-3 border-t border-white/25 pt-6 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          © {new Date().getFullYear()} {brand.company.name} Labs Inc. ·
-          PetSociety Companion App
+          © {new Date().getFullYear()} {brand.company.name} · PetSociety
         </div>
         <div className="flex flex-wrap items-center gap-6">
           <a

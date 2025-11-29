@@ -19,24 +19,24 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Neothone | PetSociety & CryptoTracking Wallet",
-    template: "%s | Neothone",
+    default: "Neothone Technologies | PetSociety & CryptoTracking Wallet",
+    template: "%s | Neothone Technologies",
   },
   description:
     "Neothone is a two-person studio building PetSociety, the discovery-first pet app, and CryptoTracking Wallet, a purple-hued crypto sidekick.",
   metadataBase: new URL("https://neothone.com"),
   openGraph: {
-    title: "Neothone | PetSociety & CryptoTracking Wallet",
+    title: "Neothone Technologies | PetSociety & CryptoTracking Wallet",
     description:
       "Discover Neothone, the two-developer studio behind PetSociety and the upcoming CryptoTracking Wallet.",
     url: "https://neothone.com",
-    siteName: "Neothone",
+    siteName: "Neothone Technologies",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neothone | PetSociety & CryptoTracking Wallet",
+    title: "Neothone Technologies | PetSociety & CryptoTracking Wallet",
     description:
       "Discover Neothone, the two-developer studio behind PetSociety and the upcoming CryptoTracking Wallet.",
   },

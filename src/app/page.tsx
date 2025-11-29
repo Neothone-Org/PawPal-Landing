@@ -43,19 +43,9 @@ const productCards = [
 
 const milestones = [
   {
-    label: "Story began",
+    label: "First live product",
     value: `${brand.company.foundingYear}`,
-    detail: "2025, Oradea, Romania",
-  },
-  {
-    label: "Team",
-    value: `${brand.company.teamSize} devs`,
-    detail: "Design + full-stack build",
-  },
-  {
-    label: "Products",
-    value: "1 live · 1 building",
-    detail: "PetSociety & Crypto Tracking",
+    detail: "PetSociety",
   },
 ];
 
@@ -134,7 +124,7 @@ export default function Home() {
           href={cryptoWalletProduct.slug}
           className="hidden rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white hover:border-white/60 md:inline-flex"
         >
-          Explore Crypto Tracking Wallet
+          Explore Crypto
         </a>
         <a
           href={petSocietyProduct.slug}
@@ -203,10 +193,11 @@ export default function Home() {
             tomorrow.
           </h1>
           <p className="text-base text-white/80">
-            Neothone is the techy duo chasing greatness from Oradea since 2025.
-            We ship PetSociety—a discovery app for every pet species—while
-            crafting a purple-hued crypto wallet companion that keeps your
-            wallets linked, transactions transparent, and copy-able in seconds.
+            Neothone Technologies is the techy duo chasing greatness from
+            Romania since 2025. We ship PetSociety—a discovery app for every pet
+            species—while crafting a purple-hued crypto wallet companion that
+            keeps your wallets linked, transactions transparent, and copy-able
+            in seconds.
           </p>
 
           <ul className="flex flex-wrap gap-3 text-sm text-white/80">
@@ -232,7 +223,7 @@ export default function Home() {
               href={cryptoWalletProduct.slug}
               className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white hover:border-white"
             >
-              Preview wallet UI
+              Preview Crypto Wallet
             </a>
           </div>
         </div>
@@ -247,7 +238,7 @@ export default function Home() {
               pet app, one bold crypto wallet, zero fluff.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {milestones.map((item) => (
                 <div key={item.label} className="rounded-2xl bg-white/5 p-4">
                   <p className="text-sm uppercase tracking-[0.2em] text-white/60">

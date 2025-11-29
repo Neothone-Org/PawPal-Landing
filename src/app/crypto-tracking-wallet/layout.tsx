@@ -5,12 +5,12 @@ const cryptoWallet = brand.product.cryptoTrackingWallet;
 
 export const metadata: Metadata = {
   title: {
-    default: `${cryptoWallet.name} by Neothone`,
+    default: `${cryptoWallet.name} by Neothone Technologies`,
     template: `%s | ${cryptoWallet.nickname}`,
   },
   description: cryptoWallet.description,
   openGraph: {
-    title: `${cryptoWallet.name} by Neothone`,
+    title: `${cryptoWallet.name} by Neothone Technologies`,
     description: cryptoWallet.description,
     type: "website",
   },

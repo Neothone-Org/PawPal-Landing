@@ -254,7 +254,9 @@ export default function CryptoTrackingWalletPage() {
                       {tx.network}
                     </p>
                     <p className="text-sm text-[#A1A1AA]">{tx.label}</p>
-                    <p className="font-mono text-xs text-[#A1A1AA]">{tx.hash}</p>
+                    <p className="font-mono text-xs text-[#A1A1AA]">
+                      {tx.hash}
+                    </p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-semibold text-[#F8FAFC]">
@@ -339,7 +341,10 @@ export default function CryptoTrackingWalletPage() {
             <li className="flex items-start gap-3">
               <span
                 className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold"
-                style={{ background: colors.primary, color: colors.textPrimary }}
+                style={{
+                  background: colors.primary,
+                  color: colors.textPrimary,
+                }}
               >
                 1
               </span>
@@ -349,17 +354,23 @@ export default function CryptoTrackingWalletPage() {
             <li className="flex items-start gap-3">
               <span
                 className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold"
-                style={{ background: colors.primary, color: colors.textPrimary }}
+                style={{
+                  background: colors.primary,
+                  color: colors.textPrimary,
+                }}
               >
                 2
               </span>
-              Label it—“Treasury,” “DeFi plays,” “Collector alt”—and drop it into
-              a board.
+              Label it—“Treasury,” “DeFi plays,” “Collector alt”—and drop it
+              into a board.
             </li>
             <li className="flex items-start gap-3">
               <span
                 className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold"
-                style={{ background: colors.primary, color: colors.textPrimary }}
+                style={{
+                  background: colors.primary,
+                  color: colors.textPrimary,
+                }}
               >
                 3
               </span>
@@ -376,7 +387,8 @@ export default function CryptoTrackingWalletPage() {
           <ul className="mt-6 space-y-4 text-sm text-[#A1A1AA]">
             <li className="flex items-start gap-3">
               <span className="mt-1 text-[#A1A1AA]">•</span>
-              Copy-any-wallet overlay that suggests similar addresses automatically.
+              Copy-any-wallet overlay that suggests similar addresses
+              automatically.
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-1 text-[#A1A1AA]">•</span>
@@ -384,7 +396,8 @@ export default function CryptoTrackingWalletPage() {
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-1 text-[#A1A1AA]">•</span>
-              Color-coded alert badges for inflows, outflows, and burner activity.
+              Color-coded alert badges for inflows, outflows, and burner
+              activity.
             </li>
           </ul>
         </div>
@@ -450,8 +463,7 @@ export default function CryptoTrackingWalletPage() {
 
       <footer className="mt-16 flex flex-col gap-3 border-t border-[rgba(255,255,255,0.08)] pt-6 text-sm text-[#A1A1AA] sm:flex-row sm:items-center sm:justify-between">
         <p>
-          © {new Date().getFullYear()} {brand.company.name}. CryptoTracking
-          Wallet is brewing with love.
+          © {new Date().getFullYear()} {brand.company.name} . CryptoTracking
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link href="/" className="hover:text-[#F8FAFC]">
