@@ -2,20 +2,85 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { brand } from "../../lib/brand";
 
+const siteUrl = "https://neothone.com";
+const petSocietyProduct = brand.product.petSociety;
+const petSocietyName = petSocietyProduct.name;
+const petSocietyUrl = `${siteUrl}${petSocietyProduct.slug}`;
+const petSocietyImageUrl = `${siteUrl}/pawpal_0.png`;
+const petSocietyLogoUrl = `${siteUrl}${petSocietyProduct.logo}`;
+const petSocietyKeywords = [
+  "PetSociety",
+  "pet social network",
+  "pet matchmaking",
+  "ethical breeding",
+  "pet messaging app",
+  "Neothone Technologies",
+];
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "PetSociety by Neothone",
+    default: "PetSociety",
     template: "%s | PetSociety",
   },
   description:
-    "PetSociety is Neothone's companion app that keeps families, pet lovers, and care pros connected with thoughtful tools.",
+    "PetSociety is the secure pet parent network for storytelling, discovery, matchmaking, messaging, and reporting by Neothone.",
+  keywords: petSocietyKeywords,
+  applicationName: petSocietyName,
+  alternates: {
+    canonical: petSocietyUrl,
+    languages: { "en-US": petSocietyUrl },
+  },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "256x256", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [{ url: "/icon-512.png", sizes: "512x512", type: "image/png" }],
+    shortcut: ["/icon.png"],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
-    title: "PetSociety by Neothone",
+    title: "PetSociety",
     description:
-      "Discover PetSociety—the companion app that keeps pet families, pet lovers, and care pros connected.",
+      "Share rich pet stories, swipe curated matches, post to community feeds, and stay safe with PetSociety servers.",
     type: "website",
+    url: petSocietyUrl,
+    siteName: petSocietyName,
+    images: [
+      {
+        url: petSocietyImageUrl,
+        width: 1080,
+        height: 1920,
+        alt: "PetSociety discovery feed",
+      },
+      {
+        url: petSocietyLogoUrl,
+        width: 1024,
+        height: 1024,
+        alt: "PetSociety logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PetSociety",
+    description:
+      "Share rich pet stories, swipe curated matches, post to community feeds, and stay safe with PetSociety's server.",
+    images: [petSocietyImageUrl],
   },
   robots: { index: true, follow: true },
+  appLinks: {
+    web: { url: petSocietyUrl },
+    android: [
+      {
+        url: petSocietyProduct.googlePlayUrl,
+        package: "com.neothone.pawpal",
+      },
+    ],
+    ios: [{ url: petSocietyProduct.appStoreUrl }],
+  },
 };
 
 export default function PetSocietyLayout({

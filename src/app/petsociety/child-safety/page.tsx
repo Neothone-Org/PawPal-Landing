@@ -1,8 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { brand } from "@/lib/brand";
 
 const LAST_UPDATED = "November 20, 2025";
-const SUPPORT_EMAIL = "contact@neothone.com";
+const SUPPORT_EMAIL =
+  brand.product.petSociety.supportEmail ?? brand.company.contactEmail;
 
 const scopeItems = [
   "User profiles (owners and pets)",

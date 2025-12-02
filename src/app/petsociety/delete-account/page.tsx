@@ -3,8 +3,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { brand } from "../../../lib/brand";
 
-const CONTACT_EMAIL = brand.company.contactEmail;
 const petSocietyConfig = brand.product.petSociety;
+const pawPalDisplayName = petSocietyConfig.alias
+  ? `${petSocietyConfig.name} (${petSocietyConfig.alias})`
+  : petSocietyConfig.name;
+const CONTACT_EMAIL =
+  petSocietyConfig.supportEmail ?? brand.company.contactEmail;
 
 const inAppSteps = [
   "Open PetSociety and make sure you are using the latest version.",
@@ -19,8 +23,9 @@ const directSteps = [
 ];
 
 const assurances = [
-  "Personal Data, pet profiles, and posts are securely removed from our production systems.",
-  "We don't retain any records.",
+  "Personal profiles, pet cards, achievements, and posts are removed from our data.",
+  "Inline images and message attachments stored are wiped and invalidated.",
+  "Backup snapshots referencing your account are pruned within the deletion window.",
 ];
 
 const timeline = [
@@ -42,7 +47,7 @@ const timeline = [
 export const metadata: Metadata = {
   title: "Delete PetSociety Account",
   description:
-    "Request deletion of your PetSociety account or contact the Neothone team for secure, full data removal.",
+    "Request deletion of your PetSociety account and learn how the team removes profiles, media, and backups.",
 };
 
 export default function DeleteAccountPage() {
@@ -59,7 +64,7 @@ export default function DeleteAccountPage() {
         <div className="mx-auto flex w-fit items-center gap-3 px-5 py-2 text-xs uppercase tracking-[0.35em]">
           <Image
             src={petSocietyConfig.logo}
-            alt="PetSociety icon"
+            alt={`${pawPalDisplayName} icon`}
             width={120}
             height={120}
             className="h-24 w-24 object-contain drop-shadow-lg rounded-full"
@@ -71,9 +76,9 @@ export default function DeleteAccountPage() {
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
           If you would like to delete your PetSociety account and all associated
-          data (including personal data, pet profiles and posts), you can
-          request account deletion in two ways. Once we confirm the request,
-          your data is permanently removed within{" "}
+          data—including personal profiles, pet cards, media, and
+          conversations—you can request deletion in two ways. Once we confirm
+          the request, data are purged within
           {petSocietyConfig.deletionWindowDays} days.
         </p>
       </header>

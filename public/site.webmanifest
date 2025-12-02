@@ -1,0 +1,56 @@
+{
+  "name": "Neothone · PetSociety",
+  "short_name": "PetSociety",
+  "description": "Neothone Technologies builds PetSociety—a discovery-rich pet community—and CryptoTracking Wallet.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#1E3A8A",
+  "orientation": "portrait",
+  "categories": ["social", "lifestyle", "pets"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Explore PetSociety",
+      "url": "/petsociety",
+      "description": "Read about PetSociety features"
+    },
+    {
+      "name": "Contact PetSociety support",
+      "url": "/petsociety/support",
+      "description": "Reach the PetSociety trust & safety team"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.neothone.pawpal",
+      "id": "com.neothone.pawpal"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com"
+    }
+  ]
+}

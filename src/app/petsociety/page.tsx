@@ -5,47 +5,74 @@ import { brand } from "../../lib/brand";
 
 const features = [
   {
-    title: "All-species discovery",
-    body: "Browse dogs, cats, reptiles, birds, and rarities with advanced filters for breed, pedigree, lineage, and location.",
+    title: "Profile storytelling",
+    body: "Launch people + pet profiles with heartwarming bios, achievements, and photo galleries that show every quirk and cuddle.",
   },
   {
-    title: "Community & chat",
-    body: "Post updates, send user requests, and hop into DMs without leaving the PetSociety universe.",
+    title: "Discovery feed",
+    body: "Swipe through easy-to-use decks with filters for intent, distance, and pet type so you always meet companions that fit your vibe.",
   },
   {
-    title: "Swipe-to-match deck",
-    body: "A Tinder-style interface that helps you match your pet with compatible companions for social, playdates, breeding or new homes.",
+    title: "Community posts",
+    body: "Share daily wins, silly moments, and milestones with reactions that help the community cheer alongside you.",
+  },
+  {
+    title: "Matchmaking + safety",
+    body: "Send either chat or breed requests and move forward only when both sides agree—PetSociety keeps duplicates and spam out of your way.",
+  },
+  {
+    title: "Messaging hub",
+    body: "Real-time conversations keep every intro, playdate detail, and shared photo together so planning feels simple.",
+  },
+  {
+    title: "Support & trust",
+    body: "In-app reporting, gentle reminders, and helpful humans keep PetSociety a friendly place from swipe to meetup.",
   },
 ];
 
 const journeys = [
   {
-    label: "Breed-ready flows",
+    label: "Tell the whole story",
     detail:
-      "Show lineage, breed, and pedigree, then match with qualified partners through swipe-style queues.",
+      "Personal bios sit beside pet pedigrees, achievements, and medical notes so future matches see context before reaching out.",
   },
   {
-    label: "Community vibes",
+    label: "Swipe with intent",
     detail:
-      "Post updates; PetSociety keeps the conversation threaded and searchable.",
+      "Discovery decks honor your filters—species, breed, pedigree, breeding intent, and radius—while skipping every pet you already passed on.",
+  },
+  {
+    label: "Move from match to meetup",
+    detail:
+      "Requests flip straight into conversations and send friendly intros so you can jump into planning the next walk, playdate, or litter.",
   },
 ];
 
 const faqs = [
   {
-    question: "What kinds of pets can I post?",
+    question: "How do I set up my pet’s profile?",
     answer:
-      "Any companion—you can list purebred litters, rescues, hobby farm animals, reptiles, fish, or fantasy mixes. Tag them with traits so discovery stays smart.",
+      "Tap “Add pet,” upload a few photos, choose species and traits, then share the story that makes them special. You can update details anytime.",
   },
   {
-    question: "How does the Tinder-style matching work?",
+    question: "Who can see my pets?",
     answer:
-      "Build a profile for your pet, set intent (breed, play, rehome, community), and swipe through curated decks. Mutual matches unlock chat.",
+      "Anyone that uses PetSociety can view public profiles in discovery decks and community posts. Only matched users can message each other.",
   },
   {
-    question: "Is the community free?",
+    question: "What happens when I swipe right on a pet profile?",
     answer:
-      "Yes. Posting, commenting, chatting, and matching stay free. Optional breeder suites—analytics, storefronts, badge programs—are rolling out later.",
+      "Interest opens a prompt with possiblity to chat, add to your favorite list or send a breeding request, with a helpful intro message.",
+  },
+  {
+    question: "Is PetSociety free?",
+    answer:
+      "Yes. Browsing pets, posting updates, messaging, and sending requests are all free. Optional premium perks may arrive later, and you’ll always get a heads-up.",
+  },
+  {
+    question: "How do I get help if something feels off?",
+    answer:
+      "Use the ••• menu on any profile, post, or chat to report an issue, or reach our support team from the Help section. We respond quickly and keep you updated.",
   },
 ];
 
@@ -56,7 +83,7 @@ const heroScreens = [
     height: 1179,
     label: "Discovery feed",
     description:
-      "Browse multi-species posts with clear availability tags, match intents, and badges curated for your clubs.",
+      "Browse multi-species posts with beautiful images and insights.",
   },
   {
     src: "/pawpal_1.png",
@@ -64,7 +91,7 @@ const heroScreens = [
     height: 1216,
     label: "Swipe-to-match",
     description:
-      "View lineage callouts, safety notes, and breeder preferences before you swipe and start a conversation.",
+      "View lineage callouts, pet information, and breeder preferences before you swipe and start a conversation.",
   },
   {
     src: "/pawpal_5.png",
@@ -72,7 +99,7 @@ const heroScreens = [
     height: 1179,
     label: "Community chats",
     description:
-      "Drop photos, files, and polls into threaded conversations that keep every care circle organized.",
+      "Send user requests, chat and stay connected with your pet community.",
   },
   {
     src: "/pawpal_2.png",
@@ -80,7 +107,7 @@ const heroScreens = [
     height: 1173,
     label: "Profile builder",
     description:
-      "Store verified details, medical notes, and temperament tags so prospective matches see the full story.",
+      "Store verified details, pedigree, and useful information so prospective matches see the full story.",
   },
   {
     src: "/pawpal_3.png",
@@ -88,7 +115,7 @@ const heroScreens = [
     height: 1215,
     label: "Care hub",
     description:
-      "Track feeding, meds, vet visits, and milestones—everything stays synced across your trusted circle.",
+      "Track posts, pet profiles & achievements, and important milestones in one place.",
   },
 ];
 
@@ -107,6 +134,16 @@ const heroScreensLayout = heroScreens.map((screen, index) => {
 });
 
 const petSocietyConfig = brand.product.petSociety;
+const petSocietyName = petSocietyConfig.name;
+const petSocietyAlias = petSocietyConfig.alias;
+const petSocietyDisplayName = petSocietyAlias
+  ? `${petSocietyName} (${petSocietyAlias})`
+  : petSocietyName;
+const petSocietyFooterLabel = petSocietyAlias
+  ? `${petSocietyName} · ${petSocietyAlias}`
+  : petSocietyName;
+const petSocietySupportEmail =
+  petSocietyConfig.supportEmail ?? brand.company.contactEmail;
 
 type StoreButtonProps = {
   href: string;
@@ -148,7 +185,7 @@ export default function PetSocietyPage() {
           <div className="flex h-24 w-24 items-center justify-center">
             <Image
               src={petSocietyConfig.logo}
-              alt={`${petSocietyConfig.name} logo`}
+              alt={`${petSocietyDisplayName} logo`}
               width={120}
               height={120}
               className="h-24 w-24 object-contain drop-shadow-lg rounded-full"
@@ -157,10 +194,11 @@ export default function PetSocietyPage() {
           </div>
           <div>
             <p className="text-lg font-semibold uppercase tracking-[0.3em]">
-              {petSocietyConfig.name}
+              {petSocietyDisplayName}
             </p>
             <p className="text-sm text-white/70">
-              A companion app crafted by {brand.company.name}
+              Built for pet parents, ethical breeders, and communities who put
+              safety first.
             </p>
           </div>
         </div>
@@ -205,7 +243,7 @@ export default function PetSocietyPage() {
             href="/"
             className="rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 hover:border-white hover:text-white"
           >
-            Back to Neothone
+            Back to homepage
           </Link>
         </nav>
       </header>
@@ -213,22 +251,28 @@ export default function PetSocietyPage() {
       <section className="mt-16 space-y-10">
         <div className="space-y-8">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em]">
-            Discovery · Community · Matching
+            Storytelling · Discovery · Safety
           </span>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            Discover, chat, and match pets of every kind with PetSociety.
+            Share authentic pet stories, find ethical matches, and plan safe
+            meetups with PetSociety.
           </h1>
           <p className="text-base text-white/80">
-            PetSociety is the do-it-all pet network: browse exotic companions,
-            cultivate breeder circles, post to the community feed, and swipe
-            through Tinder-style decks to find the perfect match or play date.
-            Built by the Neothone duo with the earthy palette you already love.
+            PetSociety is a warm home for pet parents, breeders, and rescues to
+            highlight personalities, celebrate milestones, and invite trusted
+            caretakers into the journey.
+          </p>
+          <p className="text-base text-white/80">
+            Set your intent—play, chat, breed, or rehome—and swipe through
+            curated decks that honor your filters. When both sides say yes,
+            PetSociety opens a conversation with tips to keep meetups relaxed
+            and safe.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <StoreButton
               href={petSocietyConfig.googlePlayUrl}
-              subtitle="Available soon"
+              subtitle="Available now"
               title="Google Play"
               icon={
                 <svg
@@ -243,7 +287,7 @@ export default function PetSocietyPage() {
             />
             <StoreButton
               href={petSocietyConfig.appStoreUrl}
-              subtitle="Coming soon"
+              subtitle="Available now"
               title="App Store"
               icon={
                 <svg
@@ -313,11 +357,12 @@ export default function PetSocietyPage() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr,1fr] lg:items-center">
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold">
-              Built for every listing, vibe, and wild pet idea.
+              Built for storytellers, caretakers, and trusted meetups.
             </h2>
             <p className="text-sm text-white/80">
-              PetSociety adapts to experimental breeders, seasoned rescues,
-              casual hobbyists, and meme-posting community members.
+              PetSociety adapts to family pets, rescues, and breeders alike with
+              a swipe deck, pet interactions log, and community posts tuned to
+              your intent.
             </p>
           </div>
           <div className="space-y-4">
@@ -363,9 +408,40 @@ export default function PetSocietyPage() {
         </div>
       </section>
 
+      <section className="mt-20 rounded-3xl border border-white/30 bg-white/10 p-10 text-white backdrop-blur">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="space-y-4 lg:max-w-2xl">
+            <h2 className="text-3xl font-semibold">
+              Ready to give your pet a trusted social circle?
+            </h2>
+            <p className="text-sm text-white/80">
+              PetSociety brings photo stories, swipe discovery, community posts,
+              matchmaking, messaging, and gentle reporting tools into one app so
+              you can highlight achievements, find nearby friends, and feel
+              confident about every meetup. Join PetSociety and start building
+              your pet’s social circle.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a
+              href={petSocietyConfig.googlePlayUrl}
+              className="primary-button inline-flex items-center justify-center rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em]"
+            >
+              Join PetSociety now
+            </a>
+            <a
+              href={`mailto:${petSocietySupportEmail}`}
+              className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white hover:text-white"
+            >
+              Talk to the team
+            </a>
+          </div>
+        </div>
+      </section>
+
       <footer className="mt-20 flex flex-col gap-3 border-t border-white/25 pt-6 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          © {new Date().getFullYear()} {brand.company.name} · PetSociety
+          © {new Date().getFullYear()} {petSocietyFooterLabel}
         </div>
         <div className="flex flex-wrap items-center gap-6">
           <a

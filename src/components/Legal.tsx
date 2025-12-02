@@ -3,6 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { brand } from "../lib/brand";
 
+const petSocietyBrand = brand.product.petSociety;
+
+function productLabel() {
+  return petSocietyBrand.alias
+    ? `${petSocietyBrand.name} · ${petSocietyBrand.alias}`
+    : petSocietyBrand.name;
+}
+
 export function LegalShell({
   title,
   subtitle,
@@ -29,7 +37,7 @@ export function LegalShell({
         <p>
           Last updated: <time dateTime="2024-10-12">Oct 12, 2024</time>
         </p>
-        <p>Neothone · PetSociety Companion App</p>
+        <p>{productLabel()} Companion App</p>
       </footer>
     </article>
   );
@@ -45,21 +53,21 @@ export function LegalNav() {
         >
           <span className="flex h-14 w-14 items-center justify-center">
             <Image
-              src={brand.company.logo}
-              alt={`${brand.company.name} logo`}
+              src={petSocietyBrand.logo}
+              alt={`${petSocietyBrand.name} logo`}
               width={120}
               height={120}
               className="h-18 w-18 object-contain drop-shadow-lg rounded-full"
             />
           </span>
-          {brand.company.name}
+          {productLabel()}
         </Link>
         <div className="flex items-center gap-4">
           <Link
             href="/petsociety"
             className="hidden text-[var(--color-muted)] hover:text-[var(--color-primary)] md:inline"
           >
-            PetSociety
+            {petSocietyBrand.name}
           </Link>
           <Link
             href="/petsociety/terms"

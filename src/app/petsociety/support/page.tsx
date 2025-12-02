@@ -4,43 +4,47 @@ import type { Metadata } from "next";
 import { brand } from "../../../lib/brand";
 
 const petSocietyConfig = brand.product.petSociety;
-const CONTACT_EMAIL = brand.company.contactEmail;
+const CONTACT_EMAIL =
+  petSocietyConfig.supportEmail ?? brand.company.contactEmail;
+const petSocietyDisplayName = petSocietyConfig.alias
+  ? `${petSocietyConfig.name} (${petSocietyConfig.alias})`
+  : petSocietyConfig.name;
 
 const supportTopics = [
   {
-    title: "Account & login",
-    summary:
-      "Reset password, change your email, and unlock profiles that were flagged for unusual activity.",
+    title: "Accounts & identity",
+    summary: "Reset passwords, update profile information.",
     bullets: [
-      "Use Profile → Settings → Change Password for password reset.",
-      "If your account is locked, share the device ID from the lock screen so we can restore it faster.",
+      "Profile → Settings → Change Password issues a verification code to your inbox.",
+      "If you use Google or Apple sign-in, confirm which provider is linked so we can re-enable access quickly.",
     ],
   },
   {
-    title: "Community & safety",
+    title: "Discovery, swipes & requests",
     summary:
-      "Report users, pet profiles, posts, or urgent safety concerns inside chat rooms.",
+      "Fix stuck swipe decks, duplicate match prevention, or chat/breed requests that need manual resets.",
     bullets: [
-      "Tap ••• on any post or profile → Report and include screenshots or chat links.",
-      "If you feel unsafe, pause all contact and tell us—our team can freeze threads within minutes.",
+      "Share the pet profile or request shown in Settings → Support when you email us.",
+      "We can re-open conversations, update PetInteraction history, or reverse a dismissal if both parties agree.",
     ],
   },
   {
-    title: "Data",
-    summary: "Understand request exports under GDPR/CCPA.",
+    title: "Community & reporting",
+    summary:
+      "Escalate abuse, media takedowns, or urgent safety concerns from posts, pet profiles or DMs.",
     bullets: [
-      "Ask for a portable export before you delete an account and we will deliver a secure link.",
-      "Privacy and data rights questions receive priority handling by the Neothone founders.",
+      "Use ••• → Report on any profile/post/message and include screenshots or timestamps.",
+      "Emergency situations jump to the top of our queue; we coordinate freezes.",
     ],
   },
 ];
 
 const contactChannels = [
   {
-    title: "Email our team",
+    title: "Email the PetSociety team",
     detail:
-      "Send us context, screenshots, or exports and we will respond from our shared inbox.",
-    eta: "Replies within 2 business days (Mon–Fri, UTC+2).",
+      "Include any useful informations plus screenshots so engineers can replay the issue.",
+    eta: "Replies 2 business days.",
     href: `mailto:${CONTACT_EMAIL}?subject=PetSociety%20Support`,
     action: `Email ${CONTACT_EMAIL}`,
   },
@@ -50,17 +54,17 @@ const expectations = [
   {
     label: "First response",
     description:
-      "You will hear from a PetSociety team member within 48 hours (often sooner).",
+      "Support acknowledges requests within 48 hours; urgent safety flags ping our on-call moderator immediately.",
   },
   {
     label: "Live troubleshooting",
     description:
-      "We may invite you to a quick screenshare or send diagnostic steps tailored to your device.",
+      "We may request screen recordings or start a secure call to walk through swipes, requests, or messaging threads.",
   },
   {
     label: "Resolution summary",
     description:
-      "Every ticket ends with a recap email, links to next steps, and guidance on preventing repeats.",
+      "Every ticket closes with remediation notes, moderation decisions, and links to relevant policies.",
   },
 ];
 
@@ -88,7 +92,7 @@ const quickLinks = [
 export const metadata: Metadata = {
   title: "PetSociety Support",
   description:
-    "Get help with PetSociety accounts, safety questions, billing, and more—plus direct lines to the Neothone team.",
+    "Get help with PetSociety accounts, discovery feeds, requests, messaging, and moderation—straight from the Neothone trust & safety team.",
 };
 
 export default function PetSocietySupportPage() {
@@ -105,7 +109,7 @@ export default function PetSocietySupportPage() {
         <div className="mx-auto flex w-fit items-center gap-3 px-5 py-2 text-xs uppercase tracking-[0.35em]">
           <Image
             src={petSocietyConfig.logo}
-            alt="PetSociety icon"
+            alt={`${petSocietyDisplayName} icon`}
             width={120}
             height={120}
             className="h-24 w-24 object-contain drop-shadow-lg rounded-full"
@@ -117,8 +121,8 @@ export default function PetSocietySupportPage() {
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
           This page centralizes the most-requested answers plus every way to
-          reach the Neothone team. Start with the topic that matches your
-          situation and send us a ticket whenever you need a human touch.
+          reach the PetSociety trust & safety team. Start with the topic that
+          matches your situation and a real human will follow up with context.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <a
@@ -167,9 +171,9 @@ export default function PetSocietySupportPage() {
             Reach us the way that works for you
           </h2>
           <p className="text-sm text-[var(--color-muted)]">
-            Two humans run PetSociety, so you are never routed through a bot
-            wall. Share as much context as you can, and we will follow up with
-            clear steps or a screenshare invite.
+            PetSociety’s core team triages every request—no bot responses, no
+            outsourced scripts. Share context and we will reply with precise
+            steps or a quick debug invite.
           </p>
           <ul className="space-y-4">
             {contactChannels.map((channel) => (

@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import { LegalNav, LegalShell } from "../../../components/Legal";
 import { brand } from "../../../lib/brand";
 
+const petSocietyConfig = brand.product.petSociety;
+const CONTACT_EMAIL =
+  petSocietyConfig.supportEmail ?? brand.company.contactEmail;
+
 export const metadata: Metadata = {
   title: "PetSociety Terms of Service",
-  description: "Review the conditions for using the PetSociety companion app.",
+  description: "Review the conditions for using the PetSociety.",
 };
 
 export default function TermsPage() {
@@ -13,19 +17,22 @@ export default function TermsPage() {
       <LegalNav />
       <LegalShell
         title="PetSociety Terms of Service"
-        subtitle="These terms govern your access to and use of PetSociety by Neothone."
+        subtitle="These terms govern your access to PetSociety—the secure community for storytelling, discovery, and matchmaking."
       >
         <h2 id="acceptance">1. Acceptance of terms</h2>
         <p>
-          By downloading, accessing, or using PetSociety, you agree to these Terms
-          of Service and any policies referenced here. If you are using PetSociety
-          on behalf of a household, breeder program, or organization, you
-          confirm you have authority to accept for that entity.
+          By downloading, accessing, or using PetSociety, you agree to these
+          Terms of Service and any policies referenced here. If you are using
+          PetSociety on behalf of a household, breeder program, or organization,
+          you confirm you have authority to accept for that entity.
         </p>
 
         <h2 id="accounts">2. Accounts and eligibility</h2>
         <ul>
-          <li>You must be at least 16 or the age of digital consent in your region.</li>
+          <li>
+            You must be at least 16 or the age of digital consent in your
+            region.
+          </li>
           <li>
             Keep your login credentials secure. You are responsible for activity
             under your account.
@@ -38,15 +45,15 @@ export default function TermsPage() {
 
         <h2 id="acceptable-use">3. Acceptable use</h2>
         <p>
-          You agree not to misuse PetSociety, including by attempting unauthorized
-          access, distributing malware, scraping personal data, or interfering
-          with normal operation. Breaches may result in suspension.
+          You agree not to misuse PetSociety, including by attempting
+          unauthorized access, distributing malware, scraping personal data, or
+          interfering with normal operation. Breaches may result in suspension.
         </p>
 
         <h2 id="user-content">4. User content</h2>
         <p>
           You retain rights to the information, photos, and notes you add. By
-          submitting content you grant Neothone a limited license to host,
+          submitting content you grant PetSociety a limited license to host,
           display, and process it to operate the service. You confirm you have
           necessary rights to share the data you provide.
         </p>
@@ -75,9 +82,10 @@ export default function TermsPage() {
 
         <h2 id="disclaimers">8. Disclaimers and limitation of liability</h2>
         <p>
-          PetSociety is provided “as is” without warranties of any kind. Neothone is
-          not liable for indirect, incidental, or consequential damages arising
-          from use of the service, to the maximum extent permitted by law.
+          PetSociety is provided “as is” without warranties of any kind.
+          Neothone is not liable for indirect, incidental, or consequential
+          damages arising from use of the service, to the maximum extent
+          permitted by law.
         </p>
 
         <h2 id="indemnity">9. Indemnity</h2>
@@ -88,8 +96,9 @@ export default function TermsPage() {
 
         <h2 id="changes">10. Changes to terms</h2>
         <p>
-          We may update these terms as PetSociety evolves. Material changes will be
-          communicated, and continued use after updates constitutes acceptance.
+          We may update these terms as PetSociety evolves. Material changes will
+          be communicated, and continued use after updates constitutes
+          acceptance.
         </p>
 
         <h2 id="governing-law">11. Governing law</h2>
@@ -102,10 +111,7 @@ export default function TermsPage() {
         <h2 id="contact">12. Contact</h2>
         <p>
           Questions about these terms? Email{" "}
-          <a href={`mailto:${brand.company.contactEmail}`}>
-            {brand.company.contactEmail}
-          </a>
-          .
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
         </p>
       </LegalShell>
     </>

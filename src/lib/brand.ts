@@ -23,15 +23,17 @@ export const brand = {
   product: {
     petSociety: {
       name: "PetSociety",
+      alias: "",
       description:
-        "A discovery-forward pet app for every species with social, matchmaking, chat, and a vibrant community feed.",
+        "Profile-rich pet stories, swipe discovery, matchmaking, and safety tooling for pet parents and ethical breeders.",
+      supportEmail: "contact@neothone.com",
       // the id is pawpal in order to match the app's Play Store listing
       googlePlayUrl:
         "https://play.google.com/store/apps/details?id=com.neothone.pawpal",
       appStoreUrl: "https://apps.apple.com",
       logo: "/pet_society_logo.jpeg",
       slug: "/petsociety",
-      deletionWindowDays: 14,
+      deletionWindowDays: 30,
       theme: {
         primary: "#2F5D50",
         accent: "#DAB49D",
