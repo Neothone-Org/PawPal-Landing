@@ -10,29 +10,25 @@ const supportTopics = [
   {
     title: "Account & login",
     summary:
-      "Reset passkeys, change your email, and unlock profiles that were flagged for unusual activity.",
+      "Reset password, change your email, and unlock profiles that were flagged for unusual activity.",
     bullets: [
-      "Use Profile → Settings → Security for passkey resets and session reviews.",
-      "You can update your email from Profile → Account; contact us if you no longer have access.",
+      "Use Profile → Settings → Change Password for password reset.",
       "If your account is locked, share the device ID from the lock screen so we can restore it faster.",
     ],
   },
   {
     title: "Community & safety",
     summary:
-      "Report listings, moderations, or urgent safety concerns inside clubs, feeds, or DM rooms.",
+      "Report users, pet profiles, posts, or urgent safety concerns inside chat rooms.",
     bullets: [
       "Tap ••• on any post or profile → Report and include screenshots or chat links.",
-      "Incidents that involve physical meetups are escalated to the on-call moderator instantly.",
       "If you feel unsafe, pause all contact and tell us—our team can freeze threads within minutes.",
     ],
   },
   {
-    title: "Billing & data",
-    summary:
-      "Understand receipts, breeder suite invoices, or request exports under GDPR/CCPA.",
+    title: "Data",
+    summary: "Understand request exports under GDPR/CCPA.",
     bullets: [
-      "Receipts for add-ons live in Profile → Billing and can be downloaded anytime.",
       "Ask for a portable export before you delete an account and we will deliver a secure link.",
       "Privacy and data rights questions receive priority handling by the Neothone founders.",
     ],
@@ -41,24 +37,12 @@ const supportTopics = [
 
 const contactChannels = [
   {
-    title: "In-app support",
-    detail:
-      "Open Profile → Help & support inside PetSociety to browse articles and submit a ticket from your device.",
-    eta: "Fastest for troubleshooting & device-specific bugs.",
-  },
-  {
     title: "Email our team",
     detail:
       "Send us context, screenshots, or exports and we will respond from our shared inbox.",
-    eta: "Replies within 1 business day (Mon–Fri, UTC+2).",
+    eta: "Replies within 2 business days (Mon–Fri, UTC+2).",
     href: `mailto:${CONTACT_EMAIL}?subject=PetSociety%20Support`,
     action: `Email ${CONTACT_EMAIL}`,
-  },
-  {
-    title: "Priority incidents",
-    detail:
-      "If a meetup or pet safety situation is unfolding, mark your ticket as urgent or include “Priority” in the subject line.",
-    eta: "We jump in under 4 hours, day or night.",
   },
 ];
 
@@ -66,7 +50,7 @@ const expectations = [
   {
     label: "First response",
     description:
-      "You will hear from a PetSociety team member within 24 hours (often sooner).",
+      "You will hear from a PetSociety team member within 48 hours (often sooner).",
   },
   {
     label: "Live troubleshooting",

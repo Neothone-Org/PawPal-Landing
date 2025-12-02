@@ -24,7 +24,8 @@ export const brand = {
     petSociety: {
       name: "PetSociety",
       description:
-        "A discovery-forward pet app for every species with matchmaking, chat, and a vibrant community feed.",
+        "A discovery-forward pet app for every species with social, matchmaking, chat, and a vibrant community feed.",
+      // the id is pawpal in order to match the app's Play Store listing
       googlePlayUrl:
         "https://play.google.com/store/apps/details?id=com.neothone.pawpal",
       appStoreUrl: "https://apps.apple.com",

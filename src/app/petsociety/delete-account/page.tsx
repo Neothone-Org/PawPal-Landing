@@ -9,7 +9,7 @@ const petSocietyConfig = brand.product.petSociety;
 const inAppSteps = [
   "Open PetSociety and make sure you are using the latest version.",
   "Go to Profile → Settings → Delete Account.",
-  "Review what will be removed, then confirm deletion with your password or passkey.",
+  "Confirm deletion.",
 ];
 
 const directSteps = [
@@ -19,15 +19,14 @@ const directSteps = [
 ];
 
 const assurances = [
-  "Profiles, logs, and shared lists are securely removed from our production systems.",
-  "Collaborators lose access instantly after your request is processed.",
-  "We only retain minimal records required by law (for example, transaction receipts).",
+  "Personal Data, pet profiles, and posts are securely removed from our production systems.",
+  "We don't retain any records.",
 ];
 
 const timeline = [
   {
     label: "Request received",
-    detail: "You will receive an acknowledgment email within 24 hours.",
+    detail: "You will receive an acknowledgment email within 48 hours.",
   },
   {
     label: "Verification",
@@ -72,8 +71,8 @@ export default function DeleteAccountPage() {
         </h1>
         <p className="mx-auto max-w-3xl text-base text-white/80">
           If you would like to delete your PetSociety account and all associated
-          data (including email, pet profiles, shared journals, and lists), you
-          can request account deletion in two ways. Once we confirm the request,
+          data (including personal data, pet profiles and posts), you can
+          request account deletion in two ways. Once we confirm the request,
           your data is permanently removed within{" "}
           {petSocietyConfig.deletionWindowDays} days.
         </p>
@@ -146,10 +145,6 @@ export default function DeleteAccountPage() {
               </li>
             ))}
           </ul>
-          <p className="text-xs text-[var(--color-muted)]">
-            Need a portable export first? Email us before confirming deletion
-            and we’ll share a secure download link.
-          </p>
         </div>
       </section>
 

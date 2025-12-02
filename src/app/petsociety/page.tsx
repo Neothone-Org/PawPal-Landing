@@ -6,33 +6,28 @@ import { brand } from "../../lib/brand";
 const features = [
   {
     title: "All-species discovery",
-    body: "Browse dogs, cats, reptiles, birds, and rarities with advanced filters for temperament, lineage, and lifestyle.",
+    body: "Browse dogs, cats, reptiles, birds, and rarities with advanced filters for breed, pedigree, lineage, and location.",
   },
   {
     title: "Community & chat",
-    body: "Post updates, share care threads, open topic rooms, and hop into DMs without leaving the PetSociety universe.",
+    body: "Post updates, send user requests, and hop into DMs without leaving the PetSociety universe.",
   },
   {
     title: "Swipe-to-match deck",
-    body: "A Tinder-style interface that helps you match your pet with compatible companions for breeding, playdates, or new homes.",
+    body: "A Tinder-style interface that helps you match your pet with compatible companions for social, playdates, breeding or new homes.",
   },
 ];
 
 const journeys = [
   {
-    label: "Discovery clubs",
-    detail:
-      "Host niche groups—think sphynx lovers, corgi breeders, or parakeet rescues—and invite people to browse your latest posts.",
-  },
-  {
     label: "Breed-ready flows",
     detail:
-      "Show lineage, genetic testing, and availability, then match with qualified partners through swipe-style queues.",
+      "Show lineage, breed, and pedigree, then match with qualified partners through swipe-style queues.",
   },
   {
     label: "Community vibes",
     detail:
-      "Drop polls, sell handmade gear, share memes, or stream lives; PetSociety keeps the conversation threaded and searchable.",
+      "Post updates; PetSociety keeps the conversation threaded and searchable.",
   },
 ];
 
@@ -45,7 +40,7 @@ const faqs = [
   {
     question: "How does the Tinder-style matching work?",
     answer:
-      "Build a profile for your pet, set intent (breed, play, rehome, community), and swipe through curated decks. Mutual matches unlock chat, file sharing, and vet-vetted resources.",
+      "Build a profile for your pet, set intent (breed, play, rehome, community), and swipe through curated decks. Mutual matches unlock chat.",
   },
   {
     question: "Is the community free?",

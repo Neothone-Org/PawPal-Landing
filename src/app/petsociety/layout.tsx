@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     template: "%s | PetSociety",
   },
   description:
-    "PetSociety is Neothone's companion app that keeps families, breeders, and care pros connected with thoughtful tools.",
+    "PetSociety is Neothone's companion app that keeps families, pet lovers, and care pros connected with thoughtful tools.",
   openGraph: {
     title: "PetSociety by Neothone",
     description:
-      "Discover PetSociety—the companion app that keeps pet families, breeders, and care pros connected.",
+      "Discover PetSociety—the companion app that keeps pet families, pet lovers, and care pros connected.",
     type: "website",
   },
   robots: { index: true, follow: true },
