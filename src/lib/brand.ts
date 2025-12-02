@@ -4,7 +4,7 @@ export const brand = {
     tagline: "Two devs crafting modern and powerful apps.",
     location: "Romania",
     contactEmail: "contact@neothone.com",
-    logo: "/neothone_logo.png",
+    logo: "/logo.png",
     foundingYear: 2025,
     teamSize: 2,
   },
