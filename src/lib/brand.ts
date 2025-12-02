@@ -33,6 +33,13 @@ export const brand = {
       appStoreUrl: "https://apps.apple.com",
       logo: "/pet_society_logo.jpeg",
       slug: "/petsociety",
+      aggregateRating: {
+        ratingValue: 4.9,
+        reviewCount: 42,
+        ratingCount: 42,
+        bestRating: 5,
+        worstRating: 1,
+      },
       deletionWindowDays: 30,
       theme: {
         primary: "#2F5D50",
