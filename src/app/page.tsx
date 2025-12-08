@@ -266,12 +266,17 @@ export default function Home() {
               losing the soul.
             </h2>
             <p className="text-base text-[var(--color-muted)]">
-              We keep it scrappy and intentional—researching breeders one day,
+              We keep it scrappy and intentional—scouting playful pals one day,
               sketching wallet flows the next. PetSociety deepens the
               relationship between people and every kind of pet, while
               CryptoTracking Wallet gives traders a clear window into what their
               addresses are doing. Everything is handcrafted with privacy,
               transparency, and playfulness.
+            </p>
+            <p className="text-sm text-[var(--color-muted)]">
+              PetSociety is not a breeding or marketplace app. We don't support
+              transactional or breeding activity, and we rely on in-app reports
+              on posts, pets, or users whenever something seems wrong.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
@@ -280,8 +285,9 @@ export default function Home() {
                   PetSociety Discovery Graph
                 </p>
                 <p className="mt-2 text-sm text-[var(--color-ink)]">
-                  Breed, chat, and match every animal imaginable—from parrots to
-                  poodles—inside a community feed moderated by breeders.
+                  Match, chat, and celebrate every animal imaginable—from parrots
+                  to poodles—inside a friendly feed that highlights pals and
+                  skips marketplace vibes.
                 </p>
               </div>
 
@@ -378,7 +384,7 @@ export default function Home() {
               Partners keep us honest—whether you work with pets or protocols.
             </h2>
             <p className="text-base text-[var(--color-muted)]">
-              We co-design with breeders, rescues, and wallet power-users to
+              We co-design with caretakers, rescues, and wallet power-users to
               make sure PetSociety hits the right tone and CryptoTracking Wallet
               covers every on-chain habit. Bring us your brief, and we’ll build
               alongside you.
@@ -387,7 +393,7 @@ export default function Home() {
             <ul className="space-y-4 text-sm text-[var(--color-ink)]">
               <li className="flex items-start gap-3">
                 <span className="mt-1 block h-2 w-2 rounded-full bg-[var(--color-primary)]" />
-                Host exclusive discovery drops, breed spotlights, or community
+                Host exclusive discovery drops, match spotlights, or community
                 Q&As directly inside PetSociety.
               </li>
               <li className="flex items-start gap-3">
@@ -445,7 +451,7 @@ export default function Home() {
                 Help PetSociety and CryptoTracking Wallet become great
               </h2>
               <p className="mt-3 max-w-2xl text-sm text-white/80">
-                Send us your wishlist—breeding communities you want to see,
+                Send us your wishlist—community match-ups you want to see,
                 wallet data you need to untangle, or features that would make
                 adoption smoother. We answer every note personally.
               </p>

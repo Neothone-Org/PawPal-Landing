@@ -22,7 +22,7 @@ const supportTopics = [
   {
     title: "Discovery, swipes & requests",
     summary:
-      "Fix stuck swipe decks, duplicate match prevention, or chat/breed requests that need manual resets.",
+      "Fix stuck swipe decks, duplicate match prevention, or chat/match requests that need manual resets.",
     bullets: [
       "Share the pet profile or request shown in Settings → Support when you email us.",
       "We can re-open conversations, update PetInteraction history, or reverse a dismissal if both parties agree.",
@@ -31,9 +31,9 @@ const supportTopics = [
   {
     title: "Community & reporting",
     summary:
-      "Escalate abuse, media takedowns, or urgent safety concerns from posts, pet profiles or DMs.",
+      "Escalate abuse, media takedowns, or urgent safety concerns from posts, pet profiles, user accounts, or DMs.",
     bullets: [
-      "Use ••• → Report on any profile/post/message and include screenshots or timestamps.",
+      "Use ••• → Report on any post, pet, profile, or user account and include screenshots or timestamps.",
       "Emergency situations jump to the top of our queue; we coordinate freezes.",
     ],
   },

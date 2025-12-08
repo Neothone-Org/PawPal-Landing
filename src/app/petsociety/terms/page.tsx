@@ -23,7 +23,7 @@ export default function TermsPage() {
         <p>
           By downloading, accessing, or using PetSociety, you agree to these
           Terms of Service and any policies referenced here. If you are using
-          PetSociety on behalf of a household, breeder program, or organization,
+          PetSociety on behalf of a household, rescue program, or organization,
           you confirm you have authority to accept for that entity.
         </p>
 
@@ -48,6 +48,10 @@ export default function TermsPage() {
           You agree not to misuse PetSociety, including by attempting
           unauthorized access, distributing malware, scraping personal data, or
           interfering with normal operation. Breaches may result in suspension.
+          PetSociety is not a breeding or marketplace app; offering or requesting
+          animals for breeding or sale violates these terms. Use the in-app
+          reporting options on posts, pets, or users to flag any suspicious
+          conduct or illegal requests.
         </p>
 
         <h2 id="user-content">4. User content</h2>

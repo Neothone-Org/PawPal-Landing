@@ -18,14 +18,14 @@ export default function PrivacyPage() {
       <LegalNav />
       <LegalShell
         title="PetSociety Privacy Policy"
-        subtitle="PetSociety safeguards pet parents, breeders, and moderators with transparent, choice-driven practices."
+        subtitle="PetSociety safeguards pet parents, moderators, and partners with transparent, choice-driven practices."
       >
         <h2 id="scope">1. Who this covers</h2>
         <p>
           This policy applies to the PetSociety mobile app, web experiences, and
           related services operated by the Neothone engineering team. It
           explains how we collect, use, and share information from pet families,
-          breeders, and professional partners who rely on our platform.
+          caregivers, and professional partners who rely on our platform.
         </p>
 
         <h2 id="data-we-collect">2. Data we collect</h2>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
             spam-free.
           </li>
           <li>
-            <strong>Pet profiles</strong>: companion names, breed details,
+            <strong>Pet profiles</strong>: companion names, type details,
             birthdates, medical notes, and routine logs that you willingly
             provide.
           </li>
@@ -55,11 +55,12 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Optional telemetry</strong>: wellness data from connected
-            devices or breeders, only when you explicitly link them.
+            devices or trusted care partners, only when you explicitly link
+            them.
           </li>
           <li>
             <strong>Location & discovery preferences</strong>: radius,
-            interaction history, breeding intent, and filters that power swipe
+            interaction history, match intent, and filters that power swipe
             decks and search results.
           </li>
         </ul>
@@ -96,11 +97,17 @@ export default function PrivacyPage() {
             hosting, analytics, email) under strict agreements.
           </li>
           <li>
-            <strong>Care collaborators</strong> you invite, such as breeders,
-            vets, or co-owners—with controls over what they can view.
+            <strong>Care collaborators</strong> you invite, such as vets,
+            sitters, or co-owners—with controls over what they can view.
           </li>
           <li>Authorities, if required by law or to protect safety.</li>
         </ul>
+
+        <p>
+          If you spot suspicious posts, pets, or users, use the in-app report
+          tools so the trust & safety team can act quickly and keep the match
+          pals space playful and safe.
+        </p>
 
         <h2 id="retention">6. Retention and deletion</h2>
         <p>

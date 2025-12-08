@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: "Matchmaking + safety",
-    body: "Send either chat or breed requests and move forward only when both sides agree—PetSociety keeps duplicates and spam out of your way.",
+    body: "Send chat or match requests and move forward only when both sides agree—PetSociety keeps duplicates and spam out of your way.",
   },
   {
     title: "Messaging hub",
@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: "Support & trust",
-    body: "In-app reporting, gentle reminders, and helpful humans keep PetSociety a friendly place from swipe to meetup.",
+    body: "In-app reporting on posts, pets, or users, gentle reminders, and helpful humans keep PetSociety a friendly place from swipe to meetup.",
   },
 ];
 
@@ -34,17 +34,17 @@ const journeys = [
   {
     label: "Tell the whole story",
     detail:
-      "Personal bios sit beside pet pedigrees, achievements, and medical notes so future matches see context before reaching out.",
+      "Personal bios sit beside pet stories, achievements, and care notes so future matches see context before reaching out.",
   },
   {
     label: "Swipe with intent",
     detail:
-      "Discovery decks honor your filters—species, breed, pedigree, breeding intent, and radius—while skipping every pet you already passed on.",
+      "Discovery decks honor your filters—species, temperament, vibe, and radius—while skipping pets you already passed on.",
   },
   {
     label: "Move from match to meetup",
     detail:
-      "Requests flip straight into conversations and send friendly intros so you can jump into planning the next walk, playdate, or litter.",
+      "Requests flip straight into conversations and send friendly intros so you can jump into planning the next walk, playdate, or gathering.",
   },
 ];
 
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "What happens when I swipe right on a pet profile?",
     answer:
-      "Interest opens a prompt with possiblity to chat, add to your favorite list or send a breeding request, with a helpful intro message.",
+      "Interest opens a prompt with possibility to chat, add to your favorite list, or send a match request, with a helpful intro message.",
   },
   {
     question: "Is PetSociety free?",
@@ -91,7 +91,7 @@ const heroScreens = [
     height: 1216,
     label: "Swipe-to-match",
     description:
-      "View lineage callouts, pet information, and breeder preferences before you swipe and start a conversation.",
+      "View lineage callouts, pet information, and match preferences before you swipe and start a conversation.",
   },
   {
     src: "/pawpal_5.png",
@@ -197,7 +197,7 @@ export default function PetSocietyPage() {
               {petSocietyDisplayName}
             </p>
             <p className="text-sm text-white/70">
-              Built for pet parents, ethical breeders, and communities who put
+              Built for pet parents, rescue partners, and communities who put
               safety first.
             </p>
           </div>
@@ -258,15 +258,20 @@ export default function PetSocietyPage() {
             meetups with PetSociety.
           </h1>
           <p className="text-base text-white/80">
-            PetSociety is a warm home for pet parents, breeders, and rescues to
+            PetSociety is a warm home for pet parents, rescues, and pals to
             highlight personalities, celebrate milestones, and invite trusted
             caretakers into the journey.
           </p>
           <p className="text-base text-white/80">
-            Set your intent—play, chat, breed, or rehome—and swipe through
+            Set your intent—play, chat, match, or rehome—and swipe through
             curated decks that honor your filters. When both sides say yes,
             PetSociety opens a conversation with tips to keep meetups relaxed
             and safe.
+          </p>
+          <p className="text-xs text-white/70">
+            PetSociety is not a breeding or marketplace app. We do not support
+            transactional breeding activity; please use the in-app report tools
+            on posts, pets, or users whenever something feels off.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
@@ -360,9 +365,9 @@ export default function PetSocietyPage() {
               Built for storytellers, caretakers, and trusted meetups.
             </h2>
             <p className="text-sm text-white/80">
-              PetSociety adapts to family pets, rescues, and breeders alike with
-              a swipe deck, pet interactions log, and community posts tuned to
-              your intent.
+              PetSociety adapts to family pets, rescues, and caring matchmakers
+              with a swipe deck, pet interactions log, and community posts tuned
+              to your intent.
             </p>
           </div>
           <div className="space-y-4">

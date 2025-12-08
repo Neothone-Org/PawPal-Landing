@@ -19,8 +19,9 @@ const metadataKeywords = [
   "Neothone Technologies",
   "PetSociety app",
   "pet discovery app",
-  "ethical breeding",
   "pet social network",
+  "pet pals",
+  "matchmaking",
   "Spring Boot pet backend",
   "Azure Blob media hosting",
 ];

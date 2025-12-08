@@ -12,7 +12,7 @@ const petSocietyKeywords = [
   "PetSociety",
   "pet social network",
   "pet matchmaking",
-  "ethical breeding",
+  "pet pals",
   "pet messaging app",
   "Neothone Technologies",
 ];
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | PetSociety",
   },
   description:
-    "PetSociety is the secure pet parent network for storytelling, discovery, matchmaking, messaging, and reporting by Neothone.",
+    "PetSociety is the secure pet parent network for storytelling, discovery, matchmaking, and reporting by Neothone.",
   keywords: petSocietyKeywords,
   applicationName: petSocietyName,
   alternates: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PetSociety",
     description:
-      "Share rich pet stories, swipe curated matches, post to community feeds, and stay safe with PetSociety servers.",
+      "Share rich pet stories, swipe curated matches, post to community feeds, and report anything that feels off so meetups stay friendly.",
     type: "website",
     url: petSocietyUrl,
     siteName: petSocietyName,
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PetSociety",
     description:
-      "Share rich pet stories, swipe curated matches, post to community feeds, and stay safe with PetSociety's server.",
+      "Share rich pet stories, swipe curated matches, post to community feeds, and report anything that feels off so meetups stay friendly.",
     images: [petSocietyImageUrl],
   },
   robots: { index: true, follow: true },

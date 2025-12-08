@@ -25,7 +25,7 @@ export const brand = {
       name: "PetSociety",
       alias: "",
       description:
-        "Profile-rich pet stories, swipe discovery, matchmaking, and safety tooling for pet parents and ethical breeders.",
+        "Profile-rich pet stories, swipe discovery, matchmaking, and safety tooling for pet parents and pals building joyful matches.",
       supportEmail: "contact@neothone.com",
       // the id is pawpal in order to match the app's Play Store listing
       googlePlayUrl:
