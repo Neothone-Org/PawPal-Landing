@@ -30,7 +30,8 @@ export const brand = {
       // the id is pawpal in order to match the app's Play Store listing
       googlePlayUrl:
         "https://play.google.com/store/apps/details?id=com.neothone.pawpal",
-      appStoreUrl: "https://apps.apple.com",
+      appStoreUrl:
+        "https://apps.apple.com/ro/app/pet-society-meet-pet-lovers/id6753738155",
       logo: "/pet_society_logo.jpeg",
       slug: "/petsociety",
       aggregateRating: {
