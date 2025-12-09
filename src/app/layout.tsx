@@ -10,10 +10,8 @@ const petSocietyName = petSocietyProduct.name;
 const petSocietyUrl = `${siteUrl}${petSocietyProduct.slug}`;
 const neothoneLogoUrl = `${siteUrl}${brand.company.logo}`;
 const petSocietyLogoUrl = `${siteUrl}${petSocietyProduct.logo}`;
-const ogImageUrl = `${siteUrl}/pawpal_0.png`;
-const secondaryScreenshotUrl = `${siteUrl}/pawpal_1.png`;
 const metadataDescription =
-  "Neothone is a two-person studio crafting PetSociety—the Azure-secured pet social network—and the upcoming CryptoTracking Wallet.";
+  "Neothone is a two-person studio crafting PetSociety—the secure pet social network—and the upcoming CryptoTracking Wallet.";
 const metadataKeywords = [
   "PetSociety",
   "Neothone Technologies",
@@ -22,8 +20,6 @@ const metadataKeywords = [
   "pet social network",
   "pet pals",
   "matchmaking",
-  "Spring Boot pet backend",
-  "Azure Blob media hosting",
 ];
 
 const sora = Sora({
@@ -69,16 +65,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: ogImageUrl,
-        width: 1080,
-        height: 1920,
-        alt: "PetSociety onboarding and discovery screens",
-      },
-      {
-        url: secondaryScreenshotUrl,
-        width: 1080,
-        height: 1920,
-        alt: "PetSociety conversations and swipe deck preview",
+        url: neothoneLogoUrl,
+        width: 1024,
+        height: 1024,
+        alt: "Neothone Technologies logo",
       },
       {
         url: petSocietyLogoUrl,
@@ -86,19 +76,13 @@ export const metadata: Metadata = {
         height: 1024,
         alt: "PetSociety logo",
       },
-      {
-        url: neothoneLogoUrl,
-        width: 1024,
-        height: 1024,
-        alt: "Neothone Technologies logo",
-      },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Neothone Technologies | PetSociety & CryptoTracking Wallet",
     description: metadataDescription,
-    images: [ogImageUrl],
+    images: [neothoneLogoUrl],
   },
   icons: {
     icon: [
@@ -175,6 +159,12 @@ export default function RootLayout({
           width: 1024,
           height: 1024,
         },
+        image: {
+          "@type": "ImageObject",
+          url: neothoneLogoUrl,
+          width: 1024,
+          height: 1024,
+        },
         sameAs: [siteUrl, petSocietyUrl],
         contactPoint: {
           "@type": "ContactPoint",
@@ -185,30 +175,6 @@ export default function RootLayout({
         },
         foundingDate: `${brand.company.foundingYear}-01-01`,
         numberOfEmployees: brand.company.teamSize,
-      },
-      {
-        "@type": "MobileApplication",
-        name: petSocietyName,
-        applicationCategory: "LifestyleApplication",
-        operatingSystem: "Android, iOS",
-        url: petSocietyUrl,
-        description:
-          "PetSociety lets pet parents share stories, swipe discovery decks, match safely, and message with inline media.",
-        image: petSocietyLogoUrl,
-        screenshot: [ogImageUrl, secondaryScreenshotUrl],
-        publisher: brand.company.name,
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: petSocietyProduct.aggregateRating.ratingValue,
-          ratingCount: petSocietyProduct.aggregateRating.ratingCount,
-          reviewCount: petSocietyProduct.aggregateRating.reviewCount,
-          bestRating: petSocietyProduct.aggregateRating.bestRating,
-          worstRating: petSocietyProduct.aggregateRating.worstRating,
-        },
-        downloadUrl: petSocietyProduct.googlePlayUrl,
-        installUrl: petSocietyProduct.googlePlayUrl,
-        inLanguage: "en-US",
       },
     ],
   };

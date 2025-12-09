@@ -7,6 +7,7 @@ const petSocietyProduct = brand.product.petSociety;
 const petSocietyName = petSocietyProduct.name;
 const petSocietyUrl = `${siteUrl}${petSocietyProduct.slug}`;
 const petSocietyImageUrl = `${siteUrl}/pawpal_0.png`;
+const petSocietySecondaryImageUrl = `${siteUrl}/pawpal_1.png`;
 const petSocietyLogoUrl = `${siteUrl}${petSocietyProduct.logo}`;
 const petSocietyKeywords = [
   "PetSociety",
@@ -85,6 +86,32 @@ export const metadata: Metadata = {
   },
 };
 
+const petSocietyStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: petSocietyName,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Android, iOS",
+  url: petSocietyUrl,
+  description:
+    "PetSociety lets pet parents share stories, swipe discovery decks, match safely, and message with inline media.",
+  image: petSocietyLogoUrl,
+  screenshot: [petSocietyImageUrl, petSocietySecondaryImageUrl],
+  publisher: brand.company.name,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: petSocietyProduct.aggregateRating.ratingValue,
+    ratingCount: petSocietyProduct.aggregateRating.ratingCount,
+    reviewCount: petSocietyProduct.aggregateRating.reviewCount,
+    bestRating: petSocietyProduct.aggregateRating.bestRating,
+    worstRating: petSocietyProduct.aggregateRating.worstRating,
+  },
+  downloadUrl: petSocietyProduct.googlePlayUrl,
+  installUrl: petSocietyProduct.googlePlayUrl,
+  inLanguage: "en-US",
+};
+
 export default function PetSocietyLayout({
   children,
 }: {
@@ -113,6 +140,13 @@ export default function PetSocietyLayout({
           "linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-via) 40%, var(--gradient-to) 100%)",
       }}
     >
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(petSocietyStructuredData),
+        }}
+      />
       {children}
     </div>
   );

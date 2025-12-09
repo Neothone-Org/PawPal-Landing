@@ -274,7 +274,7 @@ export default function Home() {
               transparency, and playfulness.
             </p>
             <p className="text-sm text-[var(--color-muted)]">
-              PetSociety is not a breeding or marketplace app. We don't support
+              PetSociety is not a breeding or marketplace app. We do not support
               transactional or breeding activity, and we rely on in-app reports
               on posts, pets, or users whenever something seems wrong.
             </p>
@@ -285,9 +285,9 @@ export default function Home() {
                   PetSociety Discovery Graph
                 </p>
                 <p className="mt-2 text-sm text-[var(--color-ink)]">
-                  Match, chat, and celebrate every animal imaginable—from parrots
-                  to poodles—inside a friendly feed that highlights pals and
-                  skips marketplace vibes.
+                  Match, chat, and celebrate every animal imaginable—from
+                  parrots to poodles—inside a friendly feed that highlights pals
+                  and skips marketplace vibes.
                 </p>
               </div>
 
