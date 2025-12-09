@@ -71,7 +71,7 @@ export default function Home() {
               width={128}
               height={128}
               alt={`${brand.company.name} logo`}
-              className="h-32 w-32 object-contain drop-shadow-lg rounded-full"
+              className="object-contain drop-shadow-lg rounded-full"
               priority
             />
           </div>

@@ -6,7 +6,6 @@ import type { CSSProperties } from "react";
 
 const siteUrl = "https://neothone.com";
 const petSocietyProduct = brand.product.petSociety;
-const petSocietyName = petSocietyProduct.name;
 const petSocietyUrl = `${siteUrl}${petSocietyProduct.slug}`;
 const neothoneLogoUrl = `${siteUrl}${brand.company.logo}`;
 const petSocietyLogoUrl = `${siteUrl}${petSocietyProduct.logo}`;
@@ -96,6 +95,7 @@ export const metadata: Metadata = {
       { url: "/icon.png", sizes: "256x256", type: "image/png" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
+    maskIcon: { url: "/mask-icon.svg", color: brand.palette.primary },
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     other: [{ url: "/icon-512.png", sizes: "512x512", type: "image/png" }],
     shortcut: ["/favicon-32x32.png"],
